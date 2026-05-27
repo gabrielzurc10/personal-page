@@ -13,6 +13,91 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Gradient hover border for cards */
+.card-hover {
+  position: relative;
+  box-shadow: none;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+.card-hover::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: 1;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(160deg, #60a5fa, #818cf8, #a78bfa, #c084fc);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+/* Gradient visible when card is centered in viewport */
+.card-hover.in-view::before {
+  opacity: 1;
+}
+.card-hover.in-view {
+  border-color: transparent !important;
+}
+
+/* Gradient border on hover for outline buttons */
+.border-gradient-hover {
+  position: relative;
+  transition: border-color 0.4s ease;
+}
+.border-gradient-hover::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: 1;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(160deg, #60a5fa, #818cf8, #a78bfa, #c084fc);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.border-gradient-hover:hover::before {
+  opacity: 1;
+}
+.border-gradient-hover:hover {
+  border-color: transparent !important;
+}
+
+/* Gradient hover for buttons */
+.btn-gradient-hover {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+.btn-gradient-hover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background: linear-gradient(160deg, #60a5fa, #818cf8, #a78bfa, #c084fc);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.btn-gradient-hover:hover::before {
+  opacity: 1;
+}
+.btn-gradient-hover:hover {
+}
+.btn-gradient-hover > * {
+  position: relative;
+  z-index: 1;
+}
+
 body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }

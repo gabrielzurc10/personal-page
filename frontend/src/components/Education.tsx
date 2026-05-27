@@ -1,3 +1,5 @@
+import GradientReveal from "./GradientReveal";
+
 export default function Education() {
   return (
     <section id="education" className="px-6 py-24">
@@ -9,7 +11,7 @@ export default function Education() {
           Academic background
         </p>
         <div className="mx-auto max-w-2xl">
-          <div className="rounded-2xl border border-neutral-200 bg-white p-8 transition-colors hover:border-primary/30 dark:border-white/10 dark:bg-white/[0.02] dark:hover:border-white/30">
+          <GradientReveal className="card-hover rounded-2xl border border-neutral-200 bg-white p-8 dark:border-white/10 dark:bg-white/[0.02]">
             <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left">
               <div className="flex h-14 w-14 shrink-0 items-center justify-center">
                 <svg className="h-7 w-7 text-primary dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -31,7 +33,7 @@ export default function Education() {
                 </p>
               </div>
             </div>
-          </div>
+          </GradientReveal>
         </div>
       </div>
     </section>

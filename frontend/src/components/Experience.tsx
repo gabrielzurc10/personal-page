@@ -1,3 +1,5 @@
+import GradientReveal from "./GradientReveal";
+
 const EXPERIENCES = [
   {
     title: "Software Developer IV",
@@ -74,8 +76,7 @@ export default function Experience() {
             {EXPERIENCES.map((exp, index) => (
               <div key={index} className="relative md:pl-12">
                 {/* Timeline dot */}
-                <div className="absolute left-[11px] top-0 hidden h-2.5 w-2.5 rounded-full bg-primary dark:bg-white md:block" />
-                <div className="rounded-2xl border border-neutral-200 bg-white p-6 transition-colors hover:border-primary/30 dark:border-white/10 dark:bg-white/[0.02] dark:hover:border-white/30">
+                <GradientReveal className="card-hover rounded-2xl border border-neutral-200 bg-white p-6 dark:border-white/10 dark:bg-white/[0.02]" dot>
                   <div className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                       <h3 className="text-lg font-semibold text-neutral-900 dark:text-white">
@@ -100,7 +101,7 @@ export default function Experience() {
                       </li>
                     ))}
                   </ul>
-                </div>
+                </GradientReveal>
               </div>
             ))}
           </div>

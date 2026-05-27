@@ -1,3 +1,5 @@
+import GradientReveal from "./GradientReveal";
+
 const SKILL_GROUPS = [
   {
     category: "Languages",
@@ -29,9 +31,9 @@ export default function Skills() {
         </p>
         <div className="grid gap-6 sm:grid-cols-2">
           {SKILL_GROUPS.map((group) => (
-            <div
+            <GradientReveal
               key={group.category}
-              className="rounded-2xl border border-neutral-200 bg-white p-6 transition-colors hover:border-primary/30 dark:border-white/10 dark:bg-white/[0.02] dark:hover:border-white/30"
+              className="card-hover rounded-2xl border border-neutral-200 bg-white p-6 dark:border-white/10 dark:bg-white/[0.02]"
             >
               <h3 className="mb-4 text-base font-semibold text-neutral-900 dark:text-white">
                 {group.category}
@@ -46,7 +48,7 @@ export default function Skills() {
                   </span>
                 ))}
               </div>
-            </div>
+            </GradientReveal>
           ))}
         </div>
       </div>

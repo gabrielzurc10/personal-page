@@ -29,17 +29,17 @@ export default function Hero() {
           <div className="flex flex-wrap justify-center gap-4 md:justify-start">
             <a
               href="#contact"
-              className="inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-[#333333] dark:bg-neutral-600 dark:text-white dark:hover:bg-neutral-500"
+              className="btn-gradient-hover inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-white shadow-sm dark:bg-white dark:text-black"
             >
-              Contact Me
+              <span>Contact Me</span>
             </a>
             <a
               href="http://localhost:8000/api/resume"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center rounded-full border border-neutral-300 bg-white px-6 py-3 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-50 dark:border-white/15 dark:bg-transparent dark:text-neutral-300 dark:hover:bg-white/5"
+              className="border-gradient-hover inline-flex items-center rounded-full border border-neutral-300 bg-white px-6 py-3 text-sm font-medium text-neutral-700 dark:border-white/15 dark:bg-transparent dark:text-neutral-300"
             >
-              View Resume
+              <span>View Resume</span>
             </a>
           </div>
         </div>
