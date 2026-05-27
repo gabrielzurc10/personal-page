@@ -14,9 +14,9 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 z-50 w-full border-b border-gray-200/60 bg-white/80 backdrop-blur-md dark:border-white/10 dark:bg-[#0d0d0d]/80">
+    <nav className="fixed top-0 z-50 w-full border-b border-neutral-200/60 bg-white/80 backdrop-blur-md dark:border-white/10 dark:bg-[#0d0d0d]/80">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <a href="#" className="text-lg font-semibold text-gray-900 dark:text-white">
+        <a href="#" className="text-lg font-semibold text-neutral-900 dark:text-white">
           Gabriel Cruz
         </a>
 
@@ -26,7 +26,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-gray-500 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+              className="text-sm font-medium text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
             >
               {link.label}
             </a>
@@ -39,7 +39,7 @@ export default function Navbar() {
           <ThemeToggle />
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="text-gray-500 dark:text-gray-400"
+            className="text-neutral-500 dark:text-neutral-400"
             aria-label="Toggle menu"
           >
             {mobileOpen ? (
@@ -57,13 +57,13 @@ export default function Navbar() {
 
       {/* Mobile nav */}
       {mobileOpen && (
-        <div className="border-t border-gray-200/60 bg-white px-6 py-4 dark:border-white/10 dark:bg-[#0d0d0d] md:hidden">
+        <div className="border-t border-neutral-200/60 bg-white px-6 py-4 dark:border-white/10 dark:bg-[#0d0d0d] md:hidden">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="block py-2 text-sm font-medium text-gray-500 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+              className="block py-2 text-sm font-medium text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
             >
               {link.label}
             </a>

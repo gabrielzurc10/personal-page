@@ -58,44 +58,44 @@ const EXPERIENCES = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="bg-gray-50 px-6 py-24 dark:bg-white/[0.02]">
+    <section id="experience" className="px-6 py-24">
       <div className="mx-auto max-w-6xl">
-        <h2 className="mb-4 text-center text-3xl font-bold text-gray-900 dark:text-white">
+        <h2 className="mb-4 text-center text-3xl font-bold text-neutral-900 dark:text-white">
           Experience
         </h2>
-        <p className="mb-12 text-center text-gray-500 dark:text-gray-400">
+        <p className="mb-12 text-center text-neutral-500 dark:text-neutral-400">
           My professional journey
         </p>
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-4 top-0 hidden h-full w-px bg-gray-200 dark:bg-white/10 md:block" />
+          <div className="absolute left-4 top-0 hidden h-full w-px bg-neutral-200 dark:bg-white/10 md:block" />
 
           <div className="space-y-8">
             {EXPERIENCES.map((exp, index) => (
               <div key={index} className="relative md:pl-12">
                 {/* Timeline dot */}
-                <div className="absolute left-[11px] top-6 hidden h-2.5 w-2.5 rounded-full bg-primary dark:bg-[#5fe2b8] md:block" />
-                <div className="rounded-2xl border border-gray-200 bg-white p-6 transition-colors hover:border-primary/30 dark:border-white/10 dark:bg-white/[0.02] dark:hover:border-[#5fe2b8]/30">
+                <div className="absolute left-[11px] top-0 hidden h-2.5 w-2.5 rounded-full bg-primary dark:bg-white md:block" />
+                <div className="rounded-2xl border border-neutral-200 bg-white p-6 transition-colors hover:border-primary/30 dark:border-white/10 dark:bg-white/[0.02] dark:hover:border-white/30">
                   <div className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                      <h3 className="text-lg font-semibold text-neutral-900 dark:text-white">
                         {exp.title}
                       </h3>
-                      <p className="font-medium text-primary dark:text-[#5fe2b8]">
+                      <p className="font-medium text-primary dark:text-white">
                         {exp.company}
                       </p>
-                      <p className="text-sm text-gray-400 dark:text-gray-500">
+                      <p className="text-sm text-neutral-400 dark:text-neutral-500">
                         {exp.location}
                       </p>
                     </div>
-                    <span className="text-sm text-gray-400 dark:text-gray-500">
+                    <span className="text-sm text-neutral-400 dark:text-neutral-500">
                       {exp.period}
                     </span>
                   </div>
                   <ul className="space-y-2">
                     {exp.bullets.map((bullet, i) => (
-                      <li key={i} className="flex gap-3 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-gray-300 dark:bg-gray-600" />
+                      <li key={i} className="flex gap-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-neutral-300 dark:bg-neutral-600" />
                         {bullet}
                       </li>
                     ))}

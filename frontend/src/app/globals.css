@@ -5,8 +5,8 @@
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --color-primary: #10a37f;
-  --color-primary-dark: #1a7f64;
+  --color-primary: #000000;
+  --color-primary-dark: #1a1a1a;
 }
 
 html {

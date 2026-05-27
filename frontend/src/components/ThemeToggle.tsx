@@ -20,15 +20,15 @@ export default function ThemeToggle() {
   ];
 
   return (
-    <div className="flex items-center gap-1 rounded-full bg-gray-100 p-1 dark:bg-white/10">
+    <div className="flex items-center gap-1 rounded-full bg-neutral-100 p-1 dark:bg-white/10">
       {options.map((option) => (
         <button
           key={option.value}
           onClick={() => setTheme(option.value)}
           className={`rounded-full p-1.5 transition-colors ${
             theme === option.value
-              ? "bg-white text-gray-900 shadow-sm dark:bg-white/20 dark:text-white"
-              : "text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300"
+              ? "bg-white text-neutral-900 shadow-sm dark:bg-white/20 dark:text-white"
+              : "text-neutral-400 hover:text-neutral-600 dark:text-neutral-500 dark:hover:text-neutral-300"
           }`}
           title={option.label}
           aria-label={`Switch to ${option.label} mode`}

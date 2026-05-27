@@ -11,17 +11,17 @@ export default function Hero() {
             width={280}
             height={280}
             priority
-            className="rounded-full border-2 border-gray-200 object-cover shadow-md dark:border-white/10"
+            className="rounded-full object-cover"
           />
         </div>
         <div className="text-center md:text-left">
-          <p className="mb-2 text-sm font-medium uppercase tracking-widest text-primary dark:text-[#5fe2b8]">
+          <p className="mb-2 text-sm font-medium uppercase tracking-widest text-primary dark:text-white">
             Software Developer
           </p>
-          <h1 className="mb-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl lg:text-6xl">
+          <h1 className="mb-4 text-4xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-5xl lg:text-6xl">
             Gabriel Cruz
           </h1>
-          <p className="mb-8 max-w-lg text-lg leading-relaxed text-gray-500 dark:text-gray-400">
+          <p className="mb-8 max-w-lg text-lg leading-relaxed text-neutral-500 dark:text-neutral-400">
             Software developer with 4+ years of experience building scalable
             cloud-native applications, automation systems, and LLM-powered
             solutions for enterprise clients.
@@ -29,7 +29,7 @@ export default function Hero() {
           <div className="flex flex-wrap justify-center gap-4 md:justify-start">
             <a
               href="#contact"
-              className="inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-[#0e8c6b]"
+              className="inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-[#333333] dark:bg-neutral-600 dark:text-white dark:hover:bg-neutral-500"
             >
               Contact Me
             </a>
@@ -37,7 +37,7 @@ export default function Hero() {
               href="http://localhost:8000/api/resume"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center rounded-full border border-gray-300 bg-white px-6 py-3 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 dark:border-white/15 dark:bg-transparent dark:text-gray-300 dark:hover:bg-white/5"
+              className="inline-flex items-center rounded-full border border-neutral-300 bg-white px-6 py-3 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-50 dark:border-white/15 dark:bg-transparent dark:text-neutral-300 dark:hover:bg-white/5"
             >
               View Resume
             </a>

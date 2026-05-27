@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 
@@ -16,11 +17,20 @@ export default function ChatBot() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [sessionId, setSessionId] = useState<string | null>(null);
+  const [showScrollBtn, setShowScrollBtn] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messagesContainerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const scrollToBottom = useCallback(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, []);
+
+  const handleScroll = useCallback(() => {
+    const el = messagesContainerRef.current;
+    if (!el) return;
+    const distanceFromBottom = el.scrollHeight - el.scrollTop - el.clientHeight;
+    setShowScrollBtn(distanceFromBottom > 100);
   }, []);
 
   useEffect(() => {
@@ -140,38 +150,30 @@ export default function ChatBot() {
       {/* Floating Action Button */}
       <button
         onClick={() => setOpen(!open)}
-        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-lg transition-all hover:scale-105 hover:bg-[#0e8c6b] active:scale-95"
+        className="fixed bottom-6 right-6 z-50 transition-all hover:scale-105 active:scale-95"
         aria-label={open ? "Close chat" : "Open chat"}
       >
-        {open ? (
-          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        ) : (
-          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" />
-          </svg>
-        )}
+        <Image
+          src={open ? "/winstonOpened.webp" : "/winston.webp"}
+          alt="Chat with Winston"
+          width={130}
+          height={130}
+        />
       </button>
 
       {/* Chat Modal */}
       {open && (
-        <div className="fixed bottom-24 right-6 z-50 flex h-[500px] w-[380px] flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#171717] sm:w-[420px]">
+        <div className="fixed bottom-40 right-6 z-50 flex h-[500px] w-[380px] flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#171717] sm:w-[420px]">
           {/* Header */}
-          <div className="flex items-center justify-between border-b border-gray-200 bg-primary px-4 py-3 dark:border-white/10">
+          <div className="flex items-center justify-between border-b border-neutral-200 bg-primary px-4 py-3 dark:border-white/10 dark:bg-neutral-600">
             <div className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
-                <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456Z" />
-                </svg>
-              </div>
-              <span className="font-semibold text-white">
-                Chat with Gabriel&apos;s AI
+              <span className="font-semibold text-white dark:text-white">
+                Chat with Winston
               </span>
             </div>
             <button
               onClick={() => setOpen(false)}
-              className="text-white/80 transition-colors hover:text-white"
+              className="text-white/80 transition-colors hover:text-white dark:text-white/80 dark:hover:text-white"
               aria-label="Close chat"
             >
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -181,18 +183,16 @@ export default function ChatBot() {
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto px-4 py-4">
+          <div ref={messagesContainerRef} onScroll={handleScroll} className="relative flex-1 overflow-y-auto px-4 py-4">
             {messages.length === 0 && (
               <div className="flex h-full flex-col items-center justify-center text-center">
-                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 dark:bg-[#5fe2b8]/10">
-                  <svg className="h-6 w-6 text-primary dark:text-[#5fe2b8]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456Z" />
-                  </svg>
+                <div className="mb-3">
+                  <Image src="/winstonProfile.png" alt="Winston" width={48} height={48} />
                 </div>
-                <p className="text-sm font-medium text-gray-900 dark:text-white">
-                  Hi! Ask me anything about Gabriel.
+                <p className="text-sm font-medium text-neutral-900 dark:text-white">
+                  Hi! My name is Winston. Gabriel&apos;s digital assistant. Ask me anything about Gabriel.
                 </p>
-                <p className="mt-1 text-xs text-gray-400 dark:text-gray-500">
+                <p className="mt-1 text-xs text-neutral-400 dark:text-neutral-500">
                   Skills, experience, education, and more.
                 </p>
               </div>
@@ -205,13 +205,16 @@ export default function ChatBot() {
               return (
                 <div
                   key={i}
-                  className={`mb-3 flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
+                  className={`mb-3 flex items-end gap-2 ${msg.role === "user" ? "justify-end" : "justify-start"}`}
                 >
+                  {msg.role === "assistant" && (
+                    <Image src="/winstonProfile.png" alt="Winston" width={28} height={28} className="shrink-0" />
+                  )}
                   <div
-                    className={`max-w-[80%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
+                    className={`max-w-[75%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
                       msg.role === "user"
-                        ? "bg-primary text-white"
-                        : "bg-gray-100 text-gray-800 dark:bg-white/10 dark:text-gray-200"
+                        ? "bg-primary text-white dark:bg-neutral-600 dark:text-white"
+                        : "bg-neutral-100 text-neutral-800 dark:bg-white/10 dark:text-neutral-200"
                     }`}
                   >
                     {msg.role === "assistant" ? (
@@ -228,10 +231,10 @@ export default function ChatBot() {
 
             {loading && messages[messages.length - 1]?.content === "" && (
               <div className="mb-3 flex justify-start">
-                <div className="flex gap-1.5 rounded-2xl bg-gray-100 px-4 py-3 dark:bg-white/10">
-                  <span className="h-2 w-2 animate-bounce rounded-full bg-gray-400 [animation-delay:0ms]" />
-                  <span className="h-2 w-2 animate-bounce rounded-full bg-gray-400 [animation-delay:150ms]" />
-                  <span className="h-2 w-2 animate-bounce rounded-full bg-gray-400 [animation-delay:300ms]" />
+                <div className="flex gap-1.5 rounded-2xl bg-neutral-100 px-4 py-3 dark:bg-white/10">
+                  <span className="h-2 w-2 animate-bounce rounded-full bg-neutral-400 [animation-delay:0ms]" />
+                  <span className="h-2 w-2 animate-bounce rounded-full bg-neutral-400 [animation-delay:150ms]" />
+                  <span className="h-2 w-2 animate-bounce rounded-full bg-neutral-400 [animation-delay:300ms]" />
                 </div>
               </div>
             )}
@@ -239,8 +242,23 @@ export default function ChatBot() {
             <div ref={messagesEndRef} />
           </div>
 
+          {/* Scroll to bottom */}
+          {showScrollBtn && (
+            <div className="flex justify-center">
+              <button
+                onClick={scrollToBottom}
+                className="absolute bottom-16 z-10 flex h-8 w-8 items-center justify-center rounded-full border border-neutral-200 bg-white shadow-md transition-colors hover:bg-neutral-50 dark:border-white/10 dark:bg-neutral-700 dark:hover:bg-neutral-600"
+                aria-label="Scroll to bottom"
+              >
+                <svg className="h-4 w-4 text-neutral-500 dark:text-neutral-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+            </div>
+          )}
+
           {/* Input */}
-          <div className="border-t border-gray-200 p-3 dark:border-white/10">
+          <div className="border-t border-neutral-200 p-3 dark:border-white/10">
             <div className="flex gap-2">
               <input
                 ref={inputRef}
@@ -249,13 +267,13 @@ export default function ChatBot() {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Ask about Gabriel..."
-                className="flex-1 rounded-full border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm text-gray-900 outline-none transition-colors placeholder:text-gray-400 focus:border-primary dark:border-white/10 dark:bg-white/5 dark:text-white dark:placeholder:text-gray-500 dark:focus:border-[#5fe2b8]"
+                className="flex-1 rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-sm text-neutral-900 outline-none transition-colors placeholder:text-neutral-400 focus:border-primary dark:border-white/10 dark:bg-white/5 dark:text-white dark:placeholder:text-neutral-500 dark:focus:border-white"
                 disabled={loading}
               />
               <button
                 onClick={sendMessage}
                 disabled={loading || !input.trim()}
-                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-white transition-colors hover:bg-[#0e8c6b] disabled:opacity-50"
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-white transition-colors hover:bg-[#333333] disabled:opacity-50 dark:bg-neutral-600 dark:text-white dark:hover:bg-neutral-500"
                 aria-label="Send message"
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
