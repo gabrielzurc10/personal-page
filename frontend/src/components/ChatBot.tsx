@@ -158,6 +158,7 @@ export default function ChatBot() {
           alt="Chat with Winston"
           width={130}
           height={130}
+          className="w-20 sm:w-[130px]"
         />
       </button>
 
@@ -244,13 +245,13 @@ export default function ChatBot() {
 
           {/* Scroll to bottom */}
           {showScrollBtn && (
-            <div className="flex justify-center">
+            <div className="relative flex justify-center">
               <button
                 onClick={scrollToBottom}
-                className="absolute bottom-16 z-10 flex h-8 w-8 items-center justify-center rounded-full border border-neutral-200 bg-white shadow-md transition-colors hover:bg-neutral-50 dark:border-white/10 dark:bg-neutral-700 dark:hover:bg-neutral-600"
+                className="-mt-10 z-10 flex h-7 w-7 items-center justify-center rounded-full border border-neutral-200 bg-white shadow-md transition-colors hover:bg-neutral-50 dark:border-white/10 dark:bg-neutral-700 dark:hover:bg-neutral-600"
                 aria-label="Scroll to bottom"
               >
-                <svg className="h-4 w-4 text-neutral-500 dark:text-neutral-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className="h-3.5 w-3.5 text-neutral-500 dark:text-neutral-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
