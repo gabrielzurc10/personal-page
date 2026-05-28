@@ -5,7 +5,7 @@ const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
 export default function Hero() {
   return (
     <section className="flex min-h-screen items-center justify-center px-6 pt-16">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-12 md:flex-row md:gap-16">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 sm:gap-12 md:flex-row md:gap-16">
         <div className="shrink-0">
           <Image
             src="/profileShot.jpg"
@@ -13,7 +13,7 @@ export default function Hero() {
             width={280}
             height={280}
             priority
-            className="rounded-full object-cover"
+            className="h-40 w-40 rounded-full object-cover sm:h-52 sm:w-52 md:h-64 md:w-64 lg:h-[280px] lg:w-[280px]"
           />
         </div>
         <div className="text-center md:text-left">

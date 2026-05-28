@@ -3,7 +3,7 @@ import GradientReveal from "./GradientReveal";
 
 export default function Contact() {
   return (
-    <section id="contact" className="px-6 py-24">
+    <section id="contact" className="px-6 py-16 sm:py-20 md:py-24">
       <div className="mx-auto max-w-6xl">
         <h2 className="mb-4 text-center text-3xl font-bold text-neutral-900 dark:text-white">
           Get in Touch

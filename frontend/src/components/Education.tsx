@@ -3,7 +3,7 @@ import GradientReveal from "./GradientReveal";
 
 export default function Education() {
   return (
-    <section id="education" className="px-6 py-24">
+    <section id="education" className="px-6 py-16 sm:py-20 md:py-24">
       <div className="mx-auto max-w-6xl">
         <h2 className="mb-4 text-center text-3xl font-bold text-neutral-900 dark:text-white">
           Education
