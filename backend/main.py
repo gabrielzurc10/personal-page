@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, StreamingResponse
+from mangum import Mangum
 from openai import OpenAI
 from pydantic import BaseModel
 from gabriel_context import GABRIEL_CONTEXT
@@ -25,8 +26,12 @@ app.add_middleware(
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
+# When MEMORY_BUCKET is set (Lambda), sessions are stored in S3; otherwise
+# they fall back to the local filesystem so local dev needs no AWS access.
+MEMORY_BUCKET = os.getenv("MEMORY_BUCKET")
 MEMORY_DIR = Path(__file__).resolve().parent.parent / "memory"
-MEMORY_DIR.mkdir(exist_ok=True)
+if not MEMORY_BUCKET:
+    MEMORY_DIR.mkdir(exist_ok=True)
 
 RESUME_PDF = Path(__file__).resolve().parent / "data" / "Gabriel Cruz Resume.pdf"
 
@@ -66,6 +71,20 @@ class ChatRequest(BaseModel):
 
 
 def load_session(session_id: str) -> list[dict]:
+    if MEMORY_BUCKET:
+        import boto3
+        from botocore.exceptions import ClientError
+
+        try:
+            obj = boto3.client("s3").get_object(
+                Bucket=MEMORY_BUCKET, Key=f"{session_id}.json"
+            )
+            return json.loads(obj["Body"].read())
+        except ClientError as e:
+            if e.response["Error"]["Code"] in ("NoSuchKey", "404"):
+                return []
+            raise
+
     session_file = MEMORY_DIR / f"{session_id}.json"
     if session_file.exists():
         with open(session_file, "r") as f:
@@ -74,6 +93,17 @@ def load_session(session_id: str) -> list[dict]:
 
 
 def save_session(session_id: str, messages: list[dict]) -> None:
+    if MEMORY_BUCKET:
+        import boto3
+
+        boto3.client("s3").put_object(
+            Bucket=MEMORY_BUCKET,
+            Key=f"{session_id}.json",
+            Body=json.dumps(messages, indent=2).encode(),
+            ContentType="application/json",
+        )
+        return
+
     session_file = MEMORY_DIR / f"{session_id}.json"
     with open(session_file, "w") as f:
         json.dump(messages, f, indent=2)
@@ -124,3 +154,7 @@ async def chat(request: ChatRequest):
             "Connection": "keep-alive",
         },
     )
+
+
+# Lambda entrypoint (unused when running locally via uvicorn).
+handler = Mangum(app)

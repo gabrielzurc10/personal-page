@@ -9,7 +9,8 @@ interface Message {
   content: string;
 }
 
-const API_URL = "http://localhost:8000/api/chat";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+const API_URL = `${API_BASE}/api/chat`;
 
 export default function ChatBot() {
   const [open, setOpen] = useState(false);

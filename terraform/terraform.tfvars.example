@@ -1,0 +1,8 @@
+# Copy to terraform.tfvars and fill in. Do NOT commit terraform.tfvars.
+# In CI, this value comes from the TF_VAR_openai_api_key env var instead.
+
+openai_api_key = "sk-..." # platform.openai.com -> API keys
+
+# Optional overrides:
+# aws_region   = "us-east-2"
+# project_name = "portfolio"

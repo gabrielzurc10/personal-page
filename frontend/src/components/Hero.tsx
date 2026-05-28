@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+
 export default function Hero() {
   return (
     <section className="flex min-h-screen items-center justify-center px-6 pt-16">
@@ -34,7 +36,7 @@ export default function Hero() {
               <span>Contact Me</span>
             </a>
             <a
-              href="http://localhost:8000/api/resume"
+              href={`${API_BASE}/api/resume`}
               target="_blank"
               rel="noopener noreferrer"
               className="border-gradient-hover inline-flex items-center rounded-full border border-neutral-300 bg-white px-6 py-3 text-sm font-medium text-neutral-700 dark:border-white/15 dark:bg-transparent dark:text-neutral-300"

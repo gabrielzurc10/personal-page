@@ -27,3 +27,11 @@ frontend/out/
 # OS
 .DS_Store
 Thumbs.db
+
+# Terraform
+terraform/.terraform/
+terraform/bootstrap/.terraform/
+**/*.tfstate
+**/*.tfstate.*
+terraform/*.tfvars
+terraform/build/
