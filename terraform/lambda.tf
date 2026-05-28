@@ -17,7 +17,7 @@ resource "aws_lambda_function" "backend" {
     variables = {
       OPENAI_API_KEY = var.openai_api_key
       MEMORY_BUCKET  = aws_s3_bucket.memory.id
-      CORS_ORIGINS   = "https://${aws_cloudfront_distribution.frontend.domain_name}"
+      CORS_ORIGINS   = local.use_domain ? "https://${var.domain_name},https://www.${var.domain_name}" : "https://${aws_cloudfront_distribution.frontend.domain_name}"
     }
   }
 }

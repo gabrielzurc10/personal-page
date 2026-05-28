@@ -16,9 +16,11 @@ from winston_context import WINSTON_CONTEXT
 load_dotenv(dotenv_path=Path(__file__).resolve().parent.parent / ".env")
 
 app = FastAPI()
+# CORS_ORIGINS may be a single origin or a comma-separated list (e.g. apex + www).
+allow_origins = [o.strip() for o in os.getenv("CORS_ORIGINS", "").split(",") if o.strip()]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[os.getenv("CORS_ORIGINS")],
+    allow_origins=allow_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

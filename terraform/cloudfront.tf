@@ -10,6 +10,7 @@ resource "aws_cloudfront_distribution" "frontend" {
   default_root_object = "index.html"
   comment             = "${local.name_prefix} portfolio site"
   price_class         = "PriceClass_100"
+  aliases             = local.use_domain ? [var.domain_name, "www.${var.domain_name}"] : []
 
   origin {
     domain_name              = aws_s3_bucket.frontend.bucket_regional_domain_name
@@ -47,6 +48,9 @@ resource "aws_cloudfront_distribution" "frontend" {
   }
 
   viewer_certificate {
-    cloudfront_default_certificate = true
+    cloudfront_default_certificate = local.use_domain ? null : true
+    acm_certificate_arn            = local.use_domain ? aws_acm_certificate_validation.site[0].certificate_arn : null
+    ssl_support_method             = local.use_domain ? "sni-only" : null
+    minimum_protocol_version       = local.use_domain ? "TLSv1.2_2021" : null
   }
 }

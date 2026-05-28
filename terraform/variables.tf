@@ -16,6 +16,12 @@ variable "openai_api_key" {
   sensitive   = true
 }
 
+variable "domain_name" {
+  description = "Apex custom domain for the site. Leave empty to use the default CloudFront URL. Requires a Route 53 hosted zone for this domain."
+  type        = string
+  default     = "gabriel-cruz.dev"
+}
+
 variable "lambda_memory_mb" {
   description = "Lambda memory allocation in MB."
   type        = number

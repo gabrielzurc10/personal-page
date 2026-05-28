@@ -1,6 +1,11 @@
 output "cloudfront_url" {
-  description = "Public URL of the portfolio site."
+  description = "CloudFront URL of the portfolio site (always works)."
   value       = "https://${aws_cloudfront_distribution.frontend.domain_name}"
+}
+
+output "site_url" {
+  description = "Primary site URL — the custom domain if set, else the CloudFront URL."
+  value       = local.use_domain ? "https://${var.domain_name}" : "https://${aws_cloudfront_distribution.frontend.domain_name}"
 }
 
 output "cloudfront_distribution_id" {
