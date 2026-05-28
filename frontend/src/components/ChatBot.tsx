@@ -18,6 +18,7 @@ export default function ChatBot() {
   const [loading, setLoading] = useState(false);
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [showScrollBtn, setShowScrollBtn] = useState(false);
+  const [expanded, setExpanded] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -161,9 +162,21 @@ export default function ChatBot() {
         />
       </button>
 
+      {/* Backdrop */}
+      {open && expanded && (
+        <div
+          className="fixed inset-0 z-40 bg-black/50"
+          onClick={() => setExpanded(false)}
+        />
+      )}
+
       {/* Chat Modal */}
       {open && (
-        <div className="fixed bottom-40 right-6 z-50 flex h-[500px] w-[380px] flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#171717] sm:w-[420px]">
+        <div className={`fixed z-50 flex flex-col overflow-hidden rounded-2xl border bg-white shadow-2xl dark:bg-[#171717] ${
+          expanded
+            ? "inset-0 m-auto h-[80vh] max-h-[700px] w-[90vw] max-w-2xl border-neutral-400 dark:border-neutral-600"
+            : "bottom-40 right-6 h-[500px] max-h-[calc(100vh-12rem)] w-[380px] border-neutral-200 dark:border-white/10 sm:w-[420px]"
+        }`}>
           {/* Header */}
           <div className="flex items-center justify-between border-b border-neutral-200 bg-primary px-4 py-3 dark:border-white/10 dark:bg-neutral-600">
             <div className="flex items-center gap-2">
@@ -171,15 +184,26 @@ export default function ChatBot() {
                 Chat with Winston
               </span>
             </div>
-            <button
-              onClick={() => setOpen(false)}
-              className="text-white/80 transition-colors hover:text-white dark:text-white/80 dark:hover:text-white"
-              aria-label="Close chat"
-            >
-              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => setExpanded(!expanded)}
+                className="text-white/80 transition-colors hover:text-white dark:text-white/80 dark:hover:text-white"
+                aria-label={expanded ? "Collapse chat" : "Expand chat"}
+              >
+                {expanded ? (
+                  <Image src="/collapse.svg" alt="collapse chat" width={20} height={20} className="invert" />
+                ) : (
+                  <Image src="/expand.svg" alt="expand chat" width={20} height={20} className="invert" />
+                )}
+              </button>
+              <button
+                onClick={() => setOpen(false)}
+                className="text-white/80 transition-colors hover:text-white dark:text-white/80 dark:hover:text-white"
+                aria-label="Close chat"
+              >
+                <Image src="/close.svg" alt="close chat" width={20} height={20} className="invert" />
+              </button>
+            </div>
           </div>
 
           {/* Messages */}
@@ -250,9 +274,7 @@ export default function ChatBot() {
                 className="pointer-events-auto -mb-4 -mt-12 z-10 flex h-8 w-8 items-center justify-center rounded-full border border-neutral-200 bg-white shadow-md transition-colors hover:bg-neutral-50 dark:border-white/10 dark:bg-neutral-700 dark:hover:bg-neutral-600"
                 aria-label="Scroll to bottom"
               >
-                <svg className="h-4 w-4 text-neutral-500 dark:text-neutral-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
+                <Image src="/chevron-down.svg" alt="scroll to bottom" width={16} height={16} className="opacity-50 dark:invert dark:opacity-70" />
               </button>
             </div>
           )}
@@ -276,9 +298,7 @@ export default function ChatBot() {
                 className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-500 text-white transition-opacity hover:opacity-80 disabled:opacity-50 dark:bg-blue-600"
                 aria-label="Send message"
               >
-                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 19V5m0 0l-7 7m7-7l7 7" />
-                </svg>
+                <Image src="/send.svg" alt="send message" width={16} height={16} className="invert" />
               </button>
             </div>
           </div>

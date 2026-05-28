@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 
@@ -16,8 +17,9 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-neutral-200/60 bg-white/80 backdrop-blur-md dark:border-white/10 dark:bg-[#0d0d0d]/80">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <a href="#" className="text-lg font-semibold text-neutral-900 dark:text-white">
-          Gabriel Cruz
+        <a href="#" aria-label="Home">
+          <Image src="/light-icon.png" alt="Gabriel Cruz" width={56} height={56} className="dark:hidden" />
+          <Image src="/dark-icon.png" alt="Gabriel Cruz" width={56} height={56} className="hidden dark:block" />
         </a>
 
         {/* Desktop nav */}
@@ -43,13 +45,9 @@ export default function Navbar() {
             aria-label="Toggle menu"
           >
             {mobileOpen ? (
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
+              <Image src="/close.svg" alt="close menu" width={24} height={24} className="dark:invert" />
             ) : (
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+              <Image src="/menu.svg" alt="open menu" width={24} height={24} className="dark:invert" />
             )}
           </button>
         </div>

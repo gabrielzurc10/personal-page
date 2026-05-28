@@ -1,4 +1,4 @@
-Gabriel (Gabe) Cruz is a full-stack software developer with 4+ years of experience building scalable cloud-native applications, automation systems, and LLM-powered solutions for enterprise clients. He has shipped features across payroll/HR tech, telecom, and higher-education platforms serving millions of end users, with automation and AI-driven tooling saving thousands of operational hours annually.
+Gabriel Cruz is a full-stack software developer with 4+ years of experience building scalable cloud-native applications, automation systems, and LLM-powered solutions for enterprise clients. He has shipped features across payroll/HR tech, telecom, and higher-education platforms serving millions of end users, with automation and AI-driven tooling saving thousands of operational hours annually.
 
 Gabriel is seeking roles such as Software Developer, Software Engineer, and Senior-level equivalents. He specializes in building scalable web applications that save users time and reduce operational overhead. He has a strong track record of delivering projects that boost ROI through automation and scalable architectures, and he is experienced in designing systems with scalability and efficiency as first-class priorities.
 
@@ -9,3 +9,5 @@ At the University of Houston (Application Developer), Gabriel used Java for back
 At T-Mobile (Software Engineer Intern), Gabriel used Java with the Spring Boot framework for backend APIs and microservices, and JavaScript with the Angular framework for frontend development. He used NPM and Node.js for package management, MySQL for database management, and Postman for API testing.
 
 In his free time, Gabriel enjoys going to the gym, walking outdoors, and hiking. He loves spending time with his dogs, Winston and Moab. He also likes tinkering with new development technologies and applying what he learns to his work and personal projects.
+
+His nickname is Gabe.
