@@ -43,6 +43,11 @@ export default function ChatBot() {
     if (open) inputRef.current?.focus();
   }, [open]);
 
+  // Refocus the input once a response finishes streaming
+  useEffect(() => {
+    if (open && !loading) inputRef.current?.focus();
+  }, [open, loading]);
+
   const sendMessage = async () => {
     const trimmed = input.trim();
     if (!trimmed || loading) return;
@@ -147,6 +152,19 @@ export default function ChatBot() {
     }
   };
 
+  // Render an SVG as a CSS mask so its color can be controlled via background-color
+  // (and therefore changed on hover). Works cross-browser with the -webkit- prefix.
+  const maskStyle = (src: string): React.CSSProperties => ({
+    maskImage: `url(${src})`,
+    WebkitMaskImage: `url(${src})`,
+    maskRepeat: "no-repeat",
+    WebkitMaskRepeat: "no-repeat",
+    maskPosition: "center",
+    WebkitMaskPosition: "center",
+    maskSize: "contain",
+    WebkitMaskSize: "contain",
+  });
+
   return (
     <>
       {/* Floating Action Button */}
@@ -156,11 +174,11 @@ export default function ChatBot() {
         aria-label={open ? "Close chat" : "Open chat"}
       >
         <Image
-          src={open ? "/winstonOpened.webp" : "/winston.webp"}
+          src={loading ? "/winstonTyping.webp" : open ? "/winstonOpened.webp" : "/winston.webp"}
           alt="Chat with Winston"
           width={130}
           height={130}
-          className="h-auto w-24 sm:w-28 md:w-32"
+          className={loading ? "h-auto w-10 sm:w-12 md:w-14" : "h-auto w-24 sm:w-28 md:w-32"}
         />
       </button>
 
@@ -189,21 +207,25 @@ export default function ChatBot() {
             <div className="flex items-center gap-3">
               <button
                 onClick={() => setExpanded(!expanded)}
-                className="text-white/80 transition-colors hover:text-white dark:text-white/80 dark:hover:text-white"
+                className="group"
                 aria-label={expanded ? "Collapse chat" : "Expand chat"}
               >
-                {expanded ? (
-                  <Image src="/collapse.svg" alt="collapse chat" width={20} height={20} className="invert" />
-                ) : (
-                  <Image src="/expand.svg" alt="expand chat" width={20} height={20} className="invert" />
-                )}
+                <span
+                  aria-hidden
+                  className="block h-5 w-5 bg-white/60 transition-colors group-hover:bg-white"
+                  style={maskStyle(expanded ? "/collapse.svg" : "/expand.svg")}
+                />
               </button>
               <button
                 onClick={() => setOpen(false)}
-                className="text-white/80 transition-colors hover:text-white dark:text-white/80 dark:hover:text-white"
+                className="group"
                 aria-label="Close chat"
               >
-                <Image src="/close.svg" alt="close chat" width={20} height={20} className="invert" />
+                <span
+                  aria-hidden
+                  className="block h-5 w-5 bg-white/60 transition-colors group-hover:bg-white"
+                  style={maskStyle("/close.svg")}
+                />
               </button>
             </div>
           </div>
@@ -256,7 +278,8 @@ export default function ChatBot() {
             })}
 
             {loading && messages[messages.length - 1]?.content === "" && (
-              <div className="mb-3 flex justify-start">
+              <div className="mb-3 flex items-end justify-start gap-2">
+                <Image src="/winstonProfile.png" alt="Winston" width={28} height={28} className="shrink-0" />
                 <div className="flex gap-1.5 rounded-2xl bg-neutral-100 px-4 py-3 dark:bg-white/10">
                   <span className="h-2 w-2 animate-bounce rounded-full bg-neutral-400 [animation-delay:0ms]" />
                   <span className="h-2 w-2 animate-bounce rounded-full bg-neutral-400 [animation-delay:150ms]" />
