@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gabriel Cruz | Software Developer",
+  title: "Gabriel Cruz",
   description:
-    "Full-stack software developer with experience in React, TypeScript, Python, AWS, and more.",
+    "Software engineer with experience in React, TypeScript, Python, AWS, and more.",
 };
 
 export default function RootLayout({

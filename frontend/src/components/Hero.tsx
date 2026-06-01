@@ -24,7 +24,7 @@ export default function Hero() {
             Gabriel Cruz
           </h1>
           <p className="mb-8 max-w-lg text-lg leading-relaxed text-neutral-500 dark:text-neutral-400">
-            Software developer with 4+ years of experience building scalable
+            Software engineer with 4+ years of experience building scalable
             cloud-native applications, automation systems, and LLM-powered
             solutions for enterprise clients.
           </p>

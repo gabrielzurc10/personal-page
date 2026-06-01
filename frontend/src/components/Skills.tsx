@@ -3,7 +3,7 @@ import GradientReveal from "./GradientReveal";
 const SKILL_GROUPS = [
   {
     category: "Languages",
-    skills: ["JavaScript", "TypeScript", "Java", "PHP", "Python", "C++", "C#", "SQL", "NoSQL", "HTML", "CSS", "Tailwind"],
+    skills: ["JavaScript", "TypeScript", "Java", "PHP", "Python", "C++", "C#", "SQL", "NoSQL", "GraphQL", "HTML", "CSS", "Tailwind"],
   },
   {
     category: "Frameworks & Libraries",
@@ -11,11 +11,11 @@ const SKILL_GROUPS = [
   },
   {
     category: "Databases",
-    skills: ["MySQL", "PostgreSQL", "MongoDB", "Firestore"],
+    skills: ["MySQL", "PostgreSQL", "MongoDB", "Firestore", "DynamoDB", "Aurora Serverless V2", "Supabase Vector"],
   },
   {
     category: "Tools & Platforms",
-    skills: ["Git", "GitHub", "GitLab", "Jira", "NPM", "Webpack", "Firebase", "Docker", "CI/CD", "Vercel", "AWS", "RAG", "Terraform"],
+    skills: ["Git", "GitHub", "GitLab", "Jira", "NPM", "Webpack", "Firebase", "Docker", "Kubernetes", "CI/CD", "Vercel", "AWS", "GCP", "Azure", "RAG", "Terraform", "Redis", "CDN", "Gradle"],
   },
 ];
 
