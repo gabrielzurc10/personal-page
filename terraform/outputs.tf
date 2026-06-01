@@ -27,3 +27,8 @@ output "memory_bucket" {
   description = "S3 bucket storing chat session memory."
   value       = aws_s3_bucket.memory.id
 }
+
+output "resource_group" {
+  description = "AWS Resource Group listing all project resources (grouped by the Project tag)."
+  value       = aws_resourcegroups_group.project.name
+}
