@@ -9,7 +9,7 @@
 # use the Tag Editor (search all regions by the Project tag) to see those too.
 resource "aws_resourcegroups_group" "project" {
   name        = "${local.name_prefix}-resources"
-  description = "All ${var.project_name} (prod) resources, grouped by the Project tag."
+  description = "All ${var.project_name} prod resources grouped by the Project tag."
 
   resource_query {
     query = jsonencode({
