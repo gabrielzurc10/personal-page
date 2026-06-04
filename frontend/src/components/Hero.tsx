@@ -18,7 +18,7 @@ export default function Hero() {
         </div>
         <div className="text-center md:text-left">
           <p className="mb-2 text-sm font-medium uppercase tracking-widest text-primary dark:text-white">
-            Software Developer
+            Software Engineer
           </p>
           <h1 className="mb-4 text-4xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-5xl lg:text-6xl">
             Gabriel Cruz

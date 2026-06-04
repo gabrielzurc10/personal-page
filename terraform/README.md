@@ -7,6 +7,8 @@ Deploys the portfolio to AWS:
 - **Memory** — chat sessions in a private S3 bucket.
 - Environment: **prod** · Region: **us-east-2**.
 
+Every resource is tagged `Project=portfolio`, `Environment=prod`, `ManagedBy=terraform` (via provider `default_tags`). A tag-based **AWS Resource Group** (`portfolio-prod-resources`) groups them for a one-click view in the console under *Resource Groups & Tag Editor*. Regional Resource Groups don't surface global/edge resources (CloudFront, ACM us-east-1, IAM, Route 53) — those still carry the `Project` tag, so use the **Tag Editor** (search all regions by `Project=portfolio`) to see everything.
+
 > **Note:** the chat replies arrive in one buffered response rather than streaming token-by-token — API Gateway does not support Lambda response streaming. The UI still works; it just doesn't "type out" live.
 
 ## One-time setup
@@ -63,7 +65,7 @@ aws cloudfront create-invalidation \
   --distribution-id "$(cd ../terraform && terraform output -raw cloudfront_distribution_id)" --paths "/*"
 ```
 
-Outputs: `cloudfront_url` (the site), `api_endpoint`, `frontend_bucket`, `memory_bucket`.
+Outputs: `cloudfront_url` (the site), `api_endpoint`, `frontend_bucket`, `memory_bucket`, `resource_group`.
 
 ## Tear down
 ```bash

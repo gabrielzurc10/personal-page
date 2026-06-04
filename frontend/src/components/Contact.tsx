@@ -3,8 +3,8 @@ import GradientReveal from "./GradientReveal";
 
 export default function Contact() {
   return (
-    <section id="contact" className="px-6 py-16 sm:py-20 md:py-24">
-      <div className="mx-auto max-w-6xl">
+    <section className="px-6 pt-16 sm:pt-20 md:pt-24">
+      <div id="contact" className="mx-auto flex min-h-[calc(100vh-7rem)] max-w-6xl flex-col">
         <h2 className="mb-4 text-center text-3xl font-bold text-neutral-900 dark:text-white">
           Get in Touch
         </h2>
@@ -61,13 +61,13 @@ export default function Contact() {
             </a>
           </GradientReveal>
         </div>
-      </div>
 
-      {/* Footer */}
-      <div className="mx-auto mt-24 max-w-6xl border-t border-neutral-200 pt-8 text-center dark:border-white/10">
-        <p className="text-sm text-neutral-400 dark:text-neutral-500">
-          &copy; {new Date().getFullYear()} Gabriel Cruz. All rights reserved.
-        </p>
+        {/* Footer */}
+        <div className="mt-auto border-t border-neutral-200 pt-8 pb-12 text-center dark:border-white/10">
+          <p className="text-sm text-neutral-400 dark:text-neutral-500">
+            &copy; {new Date().getFullYear()} Gabriel Cruz. All rights reserved.
+          </p>
+        </div>
       </div>
     </section>
   );

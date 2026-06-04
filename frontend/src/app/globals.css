@@ -11,6 +11,9 @@
 
 html {
   scroll-behavior: smooth;
+  /* Anchored section headers land below the fixed navbar (h-16 = 4rem) with
+     comfortable breathing room above the heading. */
+  scroll-padding-top: 7rem;
 }
 
 /* Gradient hover border for cards */
