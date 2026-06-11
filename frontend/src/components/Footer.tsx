@@ -28,14 +28,15 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           {/* Brand */}
-          <div className="max-w-xs">
-            <Link href="/" className="flex items-center gap-2" aria-label="Home">
+          <div className="max-w-sm">
+            <Link href="/" className="inline-flex items-center gap-2.5" aria-label="Home">
               <Image src="/light-icon.png" alt="Gabriel Cruz" width={36} height={36} className="dark:hidden" />
               <Image src="/dark-icon.png" alt="Gabriel Cruz" width={36} height={36} className="hidden dark:block" />
               <span className="text-lg font-bold text-neutral-900 dark:text-white">Gabriel Cruz</span>
             </Link>
-            <p className="mt-3 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
-              Software engineer building reliable web apps with React, TypeScript, Python, and AWS.
+            <p className="mt-4 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              Software Engineer with experience in building scalable cloud-native
+              applications, and automation platforms.
             </p>
           </div>
 

@@ -24,7 +24,7 @@ export default function Hero() {
             Gabriel Cruz
           </h1>
           <p className="mb-8 max-w-xl text-lg leading-relaxed text-neutral-500 dark:text-neutral-400">
-            Software Engineer with 4+ years of experience designing and
+            Software Engineer with experience in designing and
             developing scalable cloud-native applications, distributed systems,
             and automation platforms across HR/payroll, telecommunications, and
             higher education, driving operational efficiency through automation
