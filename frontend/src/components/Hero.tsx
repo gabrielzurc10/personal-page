@@ -23,10 +23,13 @@ export default function Hero() {
           <h1 className="mb-4 text-4xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-5xl lg:text-6xl">
             Gabriel Cruz
           </h1>
-          <p className="mb-8 max-w-lg text-lg leading-relaxed text-neutral-500 dark:text-neutral-400">
-            Software engineer with 4+ years of experience building scalable
-            cloud-native applications, automation systems, and LLM-powered
-            solutions for enterprise clients.
+          <p className="mb-8 max-w-xl text-lg leading-relaxed text-neutral-500 dark:text-neutral-400">
+            Software Engineer with 4+ years of experience designing and
+            developing scalable cloud-native applications, distributed systems,
+            and automation platforms across HR/payroll, telecommunications, and
+            higher education, driving operational efficiency through automation
+            and intelligent tooling that saves organizations thousands of hours
+            annually.
           </p>
           <div className="flex flex-wrap justify-center gap-4 md:justify-start">
             <a

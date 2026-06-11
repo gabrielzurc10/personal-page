@@ -3,19 +3,19 @@ import GradientReveal from "./GradientReveal";
 const SKILL_GROUPS = [
   {
     category: "Languages",
-    skills: ["JavaScript", "TypeScript", "Java", "PHP", "Python", "C++", "C#", "SQL", "NoSQL", "GraphQL", "HTML", "CSS", "Tailwind"],
+    skills: ["JavaScript", "TypeScript", "Java", "PHP", "Python", "C++", "C#", "SQL", "HTML", "CSS"],
   },
   {
     category: "Frameworks & Libraries",
-    skills: ["React", "Redux", "Angular", "Spring Boot", "Node.js", "Next.js", "LangChain", "Stripe", "OpenAI API", "FastAPI"],
+    skills: ["React", "Angular", "Spring Boot", "Node.js", "Next.js", "OpenAI API", "FastAPI", "Tailwind"],
   },
   {
-    category: "Databases",
-    skills: ["MySQL", "PostgreSQL", "MongoDB", "Firestore", "DynamoDB", "Aurora Serverless V2", "Supabase Vector"],
+    category: "Databases & Caching",
+    skills: ["MySQL", "PostgreSQL", "MongoDB", "Firestore", "DynamoDB", "Redis", "Couchbase", "NoSQL"],
   },
   {
-    category: "Tools & Platforms",
-    skills: ["Git", "GitHub", "GitLab", "Jira", "NPM", "Webpack", "Firebase", "Docker", "Kubernetes", "CI/CD", "Vercel", "AWS", "GCP", "Azure", "RAG", "Terraform", "Redis", "CDN", "Gradle"],
+    category: "Deployment & Cloud Platforms",
+    skills: ["Git", "GitHub Actions", "GitLab CI/CD", "npm", "Docker", "Kubernetes", "AWS", "GCP", "Terraform", "Gradle"],
   },
 ];
 

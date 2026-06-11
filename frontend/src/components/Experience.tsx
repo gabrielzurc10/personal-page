@@ -7,10 +7,9 @@ const EXPERIENCES = [
     location: "Irving, Texas",
     period: "June 2025 — May 2026",
     bullets: [
-      "Designed and shipped 5+ automation features for Paycom's onboarding platform, serving 36,000+ client organizations from small business through Fortune 500 companies.",
-      "Automated employee data flow across Applicant Tracking, Background Checks, and Onboarding modules, eliminating 80% of manual re-entry and cutting average HR processing time per new hire.",
-      "Mentored junior software developers through code reviews, technical guidance, and collaborative debugging sessions, improving development velocity, code quality, and adherence to engineering best practices across the team.",
-      "Streamlined the rehire workflow for Paycom, removing manual PAF submissions and saving client HR teams an estimated 1,000+ hours annually across the client base.",
+      "Led the design and delivery of 5+ automation features for Paycom's onboarding platform, applying test-driven development to ship reliably for 36,000+ client organizations ranging from small businesses to Fortune 500 enterprises.",
+      "Automated employee data flow across the Applicant Tracking, Background Checks, and Onboarding modules through close collaboration with each module team, eliminating manual re-entry and cutting average HR processing time per new hire by 80%.",
+      "Mentored junior software developers through code reviews, technical guidance, pair programming, and collaborative debugging sessions, improving development velocity, code quality, and adherence to engineering best practices across the team.",
     ],
   },
   {
@@ -19,9 +18,9 @@ const EXPERIENCES = [
     location: "Irving, Texas",
     period: "May 2024 — June 2025",
     bullets: [
-      "Led design and delivery of a new onboarding email communications module, automating 100,000+ new hire emails per month with a configurable scheduling system built in React.",
-      "Architected a web-queue-worker system that orchestrated thousands of concurrent asynchronous email processes, boosting application throughput and enabling real-time email delivery.",
-      "Built backend APIs in PHP and a React dashboard for managing communication configurations, reducing manual email coordination time for HR teams by 60%.",
+      "Architected and developed an onboarding email module with a dashboard built in React and a Control-M–orchestrated queue-worker platform, processing thousands of concurrent async jobs to deliver 100,000+ new hire emails per month at scale.",
+      "Built and containerized microservices with REST APIs in PHP for managing communication configurations, using Docker and Kubernetes to orchestrate deployment and reducing manual email coordination time for HR teams by 60%.",
+      "Streamlined the rehire workflow for Paycom by leveraging Couchbase to cache and surface prior employee records, reducing manual PAF submissions and saving client HR teams an estimated 1,000+ hours annually across the client base.",
     ],
   },
   {
@@ -30,9 +29,9 @@ const EXPERIENCES = [
     location: "Grapevine, Texas",
     period: "January 2023 — May 2024",
     bullets: [
-      "Led automation of international onboarding workflows across five countries, dynamically rendering country-specific forms using an MVC architecture with PHP backend and JavaScript frontend.",
-      "Authored detailed product specifications and translated cross-functional stakeholder and user feedback into clearly scoped engineering requirements, accelerating feature delivery cycles.",
-      "Designed, normalized, and optimized MySQL database schemas and query performance for high-traffic onboarding endpoints, improving average read response times by an estimated 40%.",
+      "Led development of international onboarding workflows across five countries, building an MVC architecture with PHP and JavaScript that dynamically rendered country-specific forms, streamlining onboarding and reducing manual setup effort by 80%.",
+      "Designed, normalized, and optimized MySQL database schemas and query performance for high-traffic onboarding endpoints, improving average response times by an estimated 40%.",
+      "Delivered features through two-week Agile sprints, collaborating with a cross-functional team to maintain steady releases across planning, stand-ups, and retrospectives.",
     ],
   },
   {
@@ -41,8 +40,8 @@ const EXPERIENCES = [
     location: "Houston, Texas",
     period: "October 2021 — December 2022",
     bullets: [
-      "Developed and maintained backend services built in Java and user interfaces with JavaScript for campus web applications used daily by 47,000+ students and 3,000+ faculty.",
-      "Modernized the UI/UX of the course marketplace and student information dashboard, improving navigation, accessibility, and visual consistency.",
+      "Delivered full stack solutions for campus web applications used daily by 47,000+ students and 3,000+ faculty, developing backend services in Java and user interfaces with JavaScript.",
+      "Modernized the UI/UX of the course marketplace and student information dashboard, leveraging JavaScript on the frontend and Java on the backend to improve navigation, accessibility, and visual consistency.",
       "Integrated PeopleSoft campus solution software with custom-built tools and tuned PostgreSQL schemas, improving query performance on high-volume endpoints.",
     ],
   },
@@ -52,8 +51,9 @@ const EXPERIENCES = [
     location: "Frisco, Texas",
     period: "May 2022 — August 2022",
     bullets: [
-      "Shipped a feature on T-Mobile's 5G Coverage Map that let chat support agents pinpoint customers' approximate locations, reducing average call-handle time. Wrote Spring Boot APIs and an Angular dashboard component.",
-      "Authored an internal JavaScript library that simplified API authorization across T-Mobile services, adopted by 10+ teams and saving an estimated 200+ hours of boilerplate code.",
+      "Developed full stack customer location visualization for support agents, with Spring Boot REST APIs in Java and Angular dashboard components, reducing average call-handle time by 60% and accelerating issue resolution.",
+      "Authored and published an internal Node.js npm package that standardized API authorization across T-Mobile services, eliminating repeated auth boilerplate for 10+ engineering teams.",
+      "Delivered projects through full Agile development cycles and presented sprint demos to development teams and stakeholders, aligning on priorities and incorporating feedback across iterations.",
     ],
   },
 ];

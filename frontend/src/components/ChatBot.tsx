@@ -43,6 +43,16 @@ export default function ChatBot() {
     if (open) inputRef.current?.focus();
   }, [open]);
 
+  // Lock background scroll while the chat is maximized (covers the page).
+  useEffect(() => {
+    if (!(open && expanded)) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [open, expanded]);
+
   // Refocus the input once a response finishes streaming
   useEffect(() => {
     if (open && !loading) inputRef.current?.focus();

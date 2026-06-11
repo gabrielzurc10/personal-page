@@ -61,13 +61,6 @@ export default function Contact() {
             </a>
           </GradientReveal>
         </div>
-
-        {/* Footer */}
-        <div className="mt-auto border-t border-neutral-200 pt-8 pb-12 text-center dark:border-white/10">
-          <p className="text-sm text-neutral-400 dark:text-neutral-500">
-            &copy; {new Date().getFullYear()} Gabriel Cruz. All rights reserved.
-          </p>
-        </div>
       </div>
     </section>
   );

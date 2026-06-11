@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import ThemeProvider from "@/components/ThemeProvider";
+import ScrollManager from "@/components/ScrollManager";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -17,6 +18,12 @@ export const metadata: Metadata = {
   title: "Gabriel Cruz",
   description:
     "Software engineer with experience in React, TypeScript, Python, AWS, and more.",
+  icons: {
+    icon: [
+      { url: "/light-icon.png", media: "(prefers-color-scheme: light)" },
+      { url: "/dark-icon.png", media: "(prefers-color-scheme: dark)" },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -31,7 +38,10 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-screen bg-white text-gray-800 dark:bg-[#0d0d0d] dark:text-gray-100">
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <ScrollManager />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

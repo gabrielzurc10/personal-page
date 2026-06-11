@@ -146,3 +146,193 @@ body {
   font-weight: 600;
   margin-bottom: 0.25rem;
 }
+
+.legal-prose {
+  color: var(--color-neutral-600, #525252);
+  line-height: 1.7;
+}
+
+:where(.dark) .legal-prose {
+  color: var(--color-neutral-300, #d4d4d4);
+}
+
+.legal-prose h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #171717;
+}
+
+:where(.dark) .legal-prose h2 {
+  color: #ffffff;
+}
+
+.legal-prose p {
+  margin-bottom: 1rem;
+}
+
+.legal-prose ul {
+  margin-bottom: 1rem;
+  padding-left: 1.25rem;
+  list-style-type: disc;
+}
+
+.legal-prose li {
+  margin-bottom: 0.5rem;
+}
+
+.legal-prose a {
+  color: #171717;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+:where(.dark) .legal-prose a {
+  color: #ffffff;
+}
+
+.project-prose {
+  color: #525252;
+  line-height: 1.7;
+}
+
+:where(.dark) .project-prose {
+  color: #d4d4d4;
+}
+
+.project-prose h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #171717;
+}
+
+:where(.dark) .project-prose h2 {
+  color: #ffffff;
+}
+
+.project-prose h3 {
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #171717;
+}
+
+:where(.dark) .project-prose h3 {
+  color: #ffffff;
+}
+
+.project-prose p {
+  margin-bottom: 1rem;
+}
+
+.project-prose ul,
+.project-prose ol {
+  margin-bottom: 1rem;
+  padding-left: 1.25rem;
+}
+
+.project-prose ul {
+  list-style-type: disc;
+}
+
+.project-prose ol {
+  list-style-type: decimal;
+}
+
+.project-prose li {
+  margin-bottom: 0.5rem;
+}
+
+.project-prose strong {
+  font-weight: 600;
+  color: #171717;
+}
+
+:where(.dark) .project-prose strong {
+  color: #f5f5f5;
+}
+
+.project-prose a {
+  color: #171717;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+:where(.dark) .project-prose a {
+  color: #ffffff;
+}
+
+/* Inline code */
+.project-prose code {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.85em;
+  background: #f5f5f5;
+  padding: 0.15em 0.4em;
+  border-radius: 0.3rem;
+}
+
+:where(.dark) .project-prose code {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Code blocks — wide ASCII diagrams scroll instead of breaking the layout */
+.project-prose pre {
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e5e5;
+  background: #fafafa;
+  padding: 1rem 1.25rem;
+}
+
+:where(.dark) .project-prose pre {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.project-prose pre code {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  white-space: pre;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Tables — scroll horizontally on narrow viewports */
+.project-prose table {
+  display: block;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.project-prose th,
+.project-prose td {
+  border: 1px solid #e5e5e5;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+:where(.dark) .project-prose th,
+:where(.dark) .project-prose td {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.project-prose th {
+  background: #f5f5f5;
+  font-weight: 600;
+  color: #171717;
+}
+
+:where(.dark) .project-prose th {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
