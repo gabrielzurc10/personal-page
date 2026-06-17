@@ -1,7 +1,7 @@
 from pathlib import Path
 import pymupdf
 
-_PDF_PATH = Path(__file__).resolve().parent / "data" / "Gabriel Cruz Resume.pdf"
+_PDF_PATH = Path(__file__).resolve().parent / "data" / "Gabriel_Cruz_Resume.pdf"
 
 
 def _extract_text() -> str:

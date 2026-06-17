@@ -35,7 +35,7 @@ export default function Footer() {
               <span className="text-lg font-bold text-neutral-900 dark:text-white">Gabriel Cruz</span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
-              Software Engineer with experience in building scalable cloud-native
+              Software Developer with experience in building scalable cloud-native
               applications, and automation platforms.
             </p>
           </div>

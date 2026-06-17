@@ -18,13 +18,13 @@ export default function Hero() {
         </div>
         <div className="text-center md:text-left">
           <p className="mb-2 text-sm font-medium uppercase tracking-widest text-primary dark:text-white">
-            Software Engineer
+            Software Developer
           </p>
           <h1 className="mb-4 text-4xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-5xl lg:text-6xl">
             Gabriel Cruz
           </h1>
           <p className="mb-8 max-w-xl text-lg leading-relaxed text-neutral-500 dark:text-neutral-400">
-            Software Engineer with experience in designing and
+            Software Developer with experience in designing and
             developing scalable cloud-native applications, distributed systems,
             and automation platforms across HR/payroll, telecommunications, and
             higher education, driving operational efficiency through automation

@@ -37,7 +37,7 @@ MEMORY_DIR = Path(__file__).resolve().parent.parent / "memory"
 if not MEMORY_BUCKET:
     MEMORY_DIR.mkdir(exist_ok=True)
 
-RESUME_PDF = Path(__file__).resolve().parent / "data" / "Gabriel Cruz Resume.pdf"
+RESUME_PDF = Path(__file__).resolve().parent / "data" / "Gabriel_Cruz_Resume.pdf"
 
 
 @app.get("/api/resume")
