@@ -25,8 +25,8 @@ export default function Hero() {
           </h1>
           <p className="mb-8 max-w-xl text-lg leading-relaxed text-neutral-500 dark:text-neutral-400">
             Software Developer with experience in designing and
-            developing scalable cloud-native applications, distributed systems,
-            and automation platforms across HR/payroll, telecommunications, and
+            developing scalable cloud-native applications and 
+            automation platforms across HR/payroll, telecommunications, and
             higher education, driving operational efficiency through automation
             and intelligent tooling that saves organizations thousands of hours
             annually.
