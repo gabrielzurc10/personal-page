@@ -36,11 +36,11 @@ html {
 .card-hover {
   position: relative;
   border-radius: 2rem;
-  box-shadow: 0 12px 32px -10px rgba(0, 0, 0, 0.15), 0 4px 12px -4px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 32px -10px rgba(0, 0, 0, 0.15), 0 0 12px -4px rgba(0, 0, 0, 0.08);
   transition: border-color 0.4s ease, box-shadow 0.4s ease;
 }
 :where(.dark) .card-hover {
-  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.6), 0 4px 12px -4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 32px -8px rgba(0, 0, 0, 0.6), 0 0 12px -4px rgba(0, 0, 0, 0.4);
 }
 .card-hover::before {
   content: "";
@@ -269,11 +269,11 @@ html:not(.dark) .text-neutral-700 { color: #1f1f1f; }
   height: auto;
   border-radius: 3rem;
   margin: 1.25rem 0 1.75rem;
-  border: 1px solid #e5e5e5;
+  box-shadow: 0 0 32px -10px rgba(0, 0, 0, 0.15), 0 0 12px -4px rgba(0, 0, 0, 0.08);
 }
 
 :where(.dark) .project-prose img {
-  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 32px -8px rgba(0, 0, 0, 0.6), 0 0 12px -4px rgba(0, 0, 0, 0.4);
 }
 
 .project-prose ul,

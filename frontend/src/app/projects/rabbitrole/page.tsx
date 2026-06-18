@@ -85,6 +85,24 @@ export default function RabbitrolePage() {
         <FadeIn delay={150} className="mt-12">
           <MarkdownContent content={body} />
         </FadeIn>
+
+        <FadeIn delay={150} className="mt-12 flex flex-col items-center gap-6">
+          <a
+            href="https://rabbitrole.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="gradient-rabbit btn-gradient-hover inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-white shadow-sm dark:bg-white dark:text-black"
+          >
+            <span>Visit rabbitrole.com</span>
+          </a>
+
+          <Link
+            href="/#projects"
+            className="text-sm text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
+          >
+            &larr; Back to projects
+          </Link>
+        </FadeIn>
       </main>
 
       <Footer />
