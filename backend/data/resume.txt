@@ -1,0 +1,148 @@
+GABRIEL CRUZ 
+(832) 620-9310 | GabrielArquizaCruz@gmail.com | linkedin.com/in/gabriel-arquiza-cruz | github.com/gabrielzurc10 
+SUMMARY 
+Software developer with 4+ years building enterprise-scale software across HR/payroll, telecommunications, and higher education 
+organizations. Proficient in Java, Spring Boot, Python, PHP, TypeScript, Angular, React, Docker and AWS. Shipped features serving 
+36,000+ organizations and automated workflows that cut processing times by up to 80%. 
+SKILLS 
+Languages – Java, JavaScript, TypeScript, PHP, Python, SQL, HTML, CSS. 
+Frameworks and Libraries – Spring Boot, React, Angular, Node.js, Next.js, OpenAI API, FastAPI, Tailwind. 
+Database and Caching – MySQL, PostgreSQL, DynamoDB, Couchbase, NoSQL. 
+Deployment and Cloud Platforms – Docker, Kubernetes, AWS, Git, GitHub Actions, GitLab CI/CD, npm, Terraform, Gradle. 
+EXPERIENCE 
+Software Developer                                                                                               ​
+​
+​
+​
+ January 2023 – May 2026 
+Paycom​​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+ Grapevine, Texas 
+•​ Led 5+ projects automating onboarding workflows, reducing new-hire processing time by 80%. 
+•​ Released an email communication module built with PHP and React, delivering 100,000+ emails monthly. 
+•​ Containerized PHP microservices with Docker, orchestrated by Kubernetes, standardizing deployments and improving reliability. 
+•​ Built onboarding workflows across five countries using PHP/JavaScript MVC architecture, replacing manual configuration. 
+•​ Tuned MySQL schemas and added Couchbase caching, improving read times on a high-traffic onboarding endpoint by 50%. 
+Application Developer                  ​
+​
+​
+​
+​
+​
+​
+     October 2021 – December 2022 
+University of Houston, Enterprise Systems​ ​
+​
+​
+​
+​
+​
+​
+​
+    Houston, Texas 
+•​ Delivered full-stack web applications used daily by 47,000+ students and faculty. 
+•​ Modernized the student information dashboard using JavaScript and Java to improve accessibility and visual consistency. 
+•​ Integrated PeopleSoft Campus Solutions with custom-built tools to streamline development workflows. 
+•​ Normalized PostgreSQL schemas, improving query performance on high-volume endpoints by 50%. 
+Software Engineer Intern                                                                                                  ​
+​
+​
+  May 2022 – August 2022 
+T-Mobile​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+         Frisco, Texas 
+•​ Accelerated support agent workflows with Spring Boot RESTful APIs and an Angular dashboard, cutting call-handle time 60%. 
+•​ Published a Node.js library on npm that standardized API authorization, saving developers hours by eliminating boilerplate code. 
+•​ Drove features through agile development cycles using Jira and demoed projects to hundreds of developers and stakeholders. 
+PROJECTS​
+​
+ 
+rabbitrole​
+​
+                                                                                                     ​
+​
+​
+​
+​
+      
+AI Resume Reviewer and Job Matcher​
+​
+​
+​
+​
+​
+​
+​
+​
+    rabbitrole.com 
+•​ Launched an AI resume reviewer and job matcher using OpenAI LLMs and RAG to critique resumes and match live postings. 
+•​ Deployed the frontend on CloudFront and a Spring Boot backend on Lambda with DynamoDB for automatic scaling. 
+•​ Secured account management with Amazon Cognito and Google OAuth, adding token refresh and session handling. 
+•​ Hosted a serverless stack with automated deployments via Terraform and GitHub Actions, keeping costs to $1–$2 per month. 
+Gabriel Cruz​
+​
+​
+​
+​
+​
+  ​
+​
+​
+​
+​
+  ​
+   
+Personal Website with AI Assistant​
+​
+​
+​
+​
+​
+​
+​
+​
+  gabriel-cruz.dev 
+•​ Released a personal website with an AI assistant using OpenAI LLMs, Python, and FastAPI for streamed Q&A. 
+•​ Architected the frontend with Next.js, React, and TypeScript, statically served via S3 and CloudFront for fast page loads. 
+•​ Provisioned the full AWS infrastructure as code with Terraform, including Lambda, API Gateway, S3, and CloudFront. 
+•​ Automated deployments through GitHub Actions, achieving $0 compute cost at idle and scaling automatically under load. 
+EDUCATION 
+Bachelor of Science in Computer Science​
+        ​
+​
+​
+​
+​
+       August 2020 – December 2022 
+University of Houston​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+ ​
+    Houston, Texas

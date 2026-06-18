@@ -25,7 +25,7 @@ variable "domain_name" {
 variable "lambda_memory_mb" {
   description = "Lambda memory allocation in MB."
   type        = number
-  default     = 512
+  default     = 1024
 }
 
 variable "lambda_timeout_s" {

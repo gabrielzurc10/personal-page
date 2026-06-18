@@ -2,8 +2,8 @@
 """Build the Lambda deployment package for the FastAPI backend.
 
 Installs dependencies as Linux (manylinux) wheels so compiled packages like
-pymupdf work on the Lambda runtime even when this script runs on macOS, then
-bundles the backend source + data files into terraform/build/lambda.zip.
+pydantic-core work on the Lambda runtime even when this script runs on macOS,
+then bundles the backend source + data files into terraform/build/lambda.zip.
 
 Usage:
     python terraform/scripts/build_lambda.py

@@ -1,0 +1,87 @@
+GABRIEL CRUZ 
+(832) 620-9310  |  GabrielArquizaCruz@gmail.com  |  linkedin.com/in/gabriel-arquiza-cruz  |  github.com/gabrielzurc10  |  gabriel-cruz.dev 
+PROFESSIONAL SUMMARY 
+Software Engineer with 4+ years of experience designing and developing scalable cloud-native applications, distributed systems, and 
+automation platforms. Led development of enterprise software across HR/payroll, telecommunications, and higher education 
+platforms, driving operational efficiency through automation and intelligent tooling that saves organizations thousands of hours 
+annually. 
+TECHNICAL SKILLS 
+Languages – JavaScript, TypeScript, Java, PHP, Python, C++, C#, SQL, HTML, CSS. 
+Frameworks and Libraries – React, Angular, Spring Boot, Node.js, Next.js, OpenAI API, FastAPI, Tailwind. 
+Database and Caching – MySQL, PostgreSQL, MongoDB, Firestore, DynamoDB, Redis, Couchbase, NoSQL. 
+Deployment and Cloud Platforms – Git, GitHub Actions, GitLab CI/CD, npm, Docker, Kubernetes, AWS, GCP, Terraform, Gradle. 
+PROFESSIONAL EXPERIENCE 
+Software Developer IV — Paycom                                                                                                                Irving, Texas | June 2025 – May 2026 
+•​ Led the design and delivery of 5+ automation features for Paycom's onboarding platform, applying test-driven development to 
+ship reliably for 36,000+ client organizations ranging from small businesses to Fortune 500 enterprises. 
+•​ Automated employee data flow across the Applicant Tracking, Background Checks, and Onboarding modules through close 
+collaboration with each module team, eliminating manual re-entry and cutting average HR processing time per new hire by 80%. 
+•​ Mentored junior software developers through code reviews, technical guidance, pair programming, and collaborative debugging 
+sessions, improving development velocity, code quality, and adherence to engineering best practices across the team. 
+Software Developer III — Paycom​
+​
+​
+​
+​
+                                    Irving, Texas | May 2024 – June 2025 
+•​ Architected and developed an onboarding email module with a dashboard built in React and Control-M–orchestrated 
+queue-worker platform, processing thousands of concurrent async jobs to deliver 100,000+ new hire emails per month at scale. 
+•​ Built and containerized microservices with REST APIs in PHP for managing communication configurations, using Docker and 
+Kubernetes to orchestrate deployment and reducing manual email coordination time for HR teams by 60%. 
+•​ Streamlined the rehire workflow for Paycom by leveraging Couchbase to cache and surface prior employee records, reducing 
+manual PAF submissions and saving client HR teams an estimated 1,000+ hours annually across the client base. 
+Software Developer II — Paycom​
+​
+​
+​
+​
+                       Grapevine, Texas | January 2023 – May 2024 
+•​ Led development of international onboarding workflows across five countries, building an MVC architecture with PHP and 
+JavaScript that dynamically rendered country-specific forms, streamlining onboarding and reducing manual setup effort by 80%. 
+•​ Designed, normalized, and optimized MySQL database schemas and query performance for high-traffic onboarding endpoints, 
+improving average read response times by an estimated 40%. 
+•​ Delivered features through two-week Agile sprints, collaborating with a cross-functional team to maintain steady releases across 
+planning, stand-ups, and retrospectives. 
+Application Developer — University of Houston, Enterprise Systems                           Houston, Texas | October 2021 – December 2022 
+•​ Delivered full stack solutions for campus web applications used daily by 47,000+ students and 3,000+ faculty, developing 
+backend services in Java and user interfaces with JavaScript. 
+•​ Modernized the UI/UX of the course marketplace and student information dashboard, leveraging JavaScript on the frontend and 
+Java on the backend to improve navigation, accessibility, and visual consistency. 
+•​ Integrated PeopleSoft campus solution software with custom-built tools and tuned PostgreSQL schemas, improving query 
+performance on high-volume endpoints. 
+Software Engineer Intern — T-Mobile                                                                                                           Frisco, Texas| May 2022 – August 2022 
+•​ Developed full stack customer location visualization for support agents, with Spring Boot REST APIs in Java and Angular 
+dashboard components, reducing average call-handle time by 60% and accelerating issue resolution. 
+•​ Authored and published an internal Node.js npm package that standardized API authorization across T-Mobile services, 
+eliminating repeated auth boilerplate for 10+ engineering teams. 
+•​ Delivered projects through full Agile development cycles and presented sprint demos to development teams and stakeholders, 
+aligning on priorities and incorporating feedback across iterations. 
+PROJECTS​
+​
+ 
+rabbitrole — AI Resume Reviewer & Job Matcher​
+​
+                                                                                                rabbitrole.com 
+•​ Created an AI resume reviewer and job matcher that gives job seekers specific feedback and roles they actually fit. Users upload 
+a resume, and the AI returns severity grouped feedback with suggested fixes, then finds matches with live job postings. 
+•​ Developed with a React, Next.js, TypeScript, and Tailwind frontend on S3 and CloudFront, and a Spring Boot backend running on 
+AWS Lambda with DynamoDB and Cognito auth, powered by OpenAI models and RAG grounded in live job postings. 
+•​ Automated infrastructure and deployments with Terraform and GitHub Actions, shipping a serverless stack that runs at one to 
+two dollars per month and showcases end to end ownership across frontend, backend, AI, and DevOps. 
+Gabriel Cruz — Personal Website with AI Assistant​
+​
+​
+​
+​
+​
+​
+    gabriel-cruz.dev 
+•​ Built a personal website featuring an AI assistant that answers questions about my background and experience, using a Next.js, 
+React, and TypeScript frontend statically served through Amazon S3 and CloudFront. 
+•​ Engineered the AI assistant to stream LLM responses over Server Sent Events with a Python FastAPI backend, maintaining 
+conversation memory per session and a system prompt hardened against prompt injection. 
+•​ Provisioned the full AWS stack as code with Terraform, including Lambda, API Gateway, S3, CloudFront, and Route 53, and 
+automated deployments through GitHub Actions, achieving $0 compute cost at idle and scaling automatically under load. 
+EDUCATION 
+Bachelor of Science in Computer Science — University of Houston​
+                Houston, Texas | August 2020 – December 2022
