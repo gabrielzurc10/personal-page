@@ -16,7 +16,7 @@ export default function Navbar({ showSections = true }: { showSections?: boolean
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeId, setActiveId] = useState("");
   const linkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
-  const [indicator, setIndicator] = useState({ left: 0, width: 0 });
+  const [pill, setPill] = useState({ left: 0, width: 0 });
 
   // Scroll-spy: highlight the nav link for the section currently under the navbar.
   useEffect(() => {
@@ -45,25 +45,28 @@ export default function Navbar({ showSections = true }: { showSections?: boolean
     return () => window.removeEventListener("scroll", onScroll);
   }, [showSections]);
 
-  // Move the sliding underline to the active link (and keep it in sync on resize).
+  // Slide the desktop pill to the active link (and keep it in sync on resize).
   useEffect(() => {
     if (!showSections) return;
     const update = () => {
       const i = NAV_LINKS.findIndex((link) => link.href === `#${activeId}`);
       const el = linkRefs.current[i];
-      if (el) setIndicator({ left: el.offsetLeft, width: el.offsetWidth });
-      else setIndicator((prev) => ({ ...prev, width: 0 }));
+      if (el) setPill({ left: el.offsetLeft, width: el.offsetWidth });
+      else setPill((prev) => ({ ...prev, width: 0 }));
     };
-
     update();
     window.addEventListener("resize", update);
     return () => window.removeEventListener("resize", update);
   }, [activeId, showSections]);
 
+  const isActive = (href: string) => href === `#${activeId}`;
+
+  // Shared shape + text color. The pill background is rendered separately:
+  // a sliding span on desktop, a static bg on the active mobile link.
   const linkClass = (href: string) =>
-    `text-sm font-bold transition-colors ${
-      href === `#${activeId}`
-        ? "text-neutral-900 dark:text-white"
+    `rounded-full px-4 py-2 text-sm font-bold transition-colors ${
+      isActive(href)
+        ? "text-white dark:text-black"
         : "text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
     }`;
 
@@ -82,7 +85,17 @@ export default function Navbar({ showSections = true }: { showSections?: boolean
 
         {/* Desktop nav — links grouped and centered in the bar */}
         {showSections && (
-          <div className="relative mx-auto hidden h-16 items-stretch gap-10 md:flex">
+          <div className="relative mx-auto hidden h-16 items-center gap-1 md:flex">
+            {/* Sliding pill behind the active link */}
+            <span
+              aria-hidden
+              className="pointer-events-none absolute top-1/2 z-0 h-9 -translate-y-1/2 rounded-full bg-black transition-all duration-300 ease-out dark:bg-white"
+              style={{
+                left: pill.left,
+                width: pill.width,
+                opacity: pill.width ? 1 : 0,
+              }}
+            />
             {NAV_LINKS.map((link, i) => (
               <a
                 key={link.href}
@@ -90,20 +103,11 @@ export default function Navbar({ showSections = true }: { showSections?: boolean
                 ref={(el) => {
                   linkRefs.current[i] = el;
                 }}
-                className={`flex items-center ${linkClass(link.href)}`}
+                className={`relative z-10 flex items-center ${linkClass(link.href)}`}
               >
                 {link.label}
               </a>
             ))}
-            {/* Sliding underline that animates between sections */}
-            <span
-              className="pointer-events-none absolute bottom-0 -mb-px h-0.5 bg-black transition-all duration-300 ease-out dark:bg-white"
-              style={{
-                left: indicator.left,
-                width: indicator.width,
-                opacity: indicator.width ? 1 : 0,
-              }}
-            />
           </div>
         )}
 
@@ -139,7 +143,7 @@ export default function Navbar({ showSections = true }: { showSections?: boolean
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className={`block py-2 ${linkClass(link.href)}`}
+              className={`block ${linkClass(link.href)} ${isActive(link.href) ? "bg-black dark:bg-white" : ""}`}
             >
               {link.label}
             </a>

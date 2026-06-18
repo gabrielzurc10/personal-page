@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import GradientReveal from "./GradientReveal";
 
@@ -15,14 +16,23 @@ export default function Projects() {
         </p>
 
         <div className="mx-auto max-w-3xl">
-          <GradientReveal className="card-hover rounded-2xl border border-neutral-200 bg-white p-6 dark:border-white/10 dark:bg-white/[0.02] sm:p-8">
+          <GradientReveal className="gradient-rabbit card-hover rounded-2xl bg-white p-6 dark:bg-white/[0.02] sm:p-8">
             <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary dark:text-neutral-400">
               Featured project
             </p>
 
-            <h3 className="text-2xl font-bold text-neutral-900 dark:text-white">
-              rabbitrole
-            </h3>
+            <div className="flex items-center gap-2.5">
+              <Image
+                src="/rabbitrole-logo.png"
+                alt="rabbitrole logo"
+                width={656}
+                height={710}
+                className="h-8 w-auto"
+              />
+              <h3 className="text-2xl font-bold text-neutral-900 dark:text-white">
+                rabbit<span className="text-gradient-rabbit">role</span>
+              </h3>
+            </div>
 
             <p className="mt-1 text-sm font-medium text-neutral-500 dark:text-neutral-400">
               An AI resume reviewer and job matcher
@@ -38,7 +48,7 @@ export default function Projects() {
               {TECH.map((tech) => (
                 <span
                   key={tech}
-                  className="rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-sm text-neutral-600 dark:border-white/10 dark:bg-white/5 dark:text-neutral-300"
+                  className="rounded-full bg-neutral-100 px-3 py-1 text-sm text-neutral-600 dark:bg-white/10 dark:text-neutral-300"
                 >
                   {tech}
                 </span>
@@ -56,7 +66,7 @@ export default function Projects() {
                 href="https://rabbitrole.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border-gradient-hover inline-flex items-center rounded-full border border-neutral-300 bg-white px-5 py-2.5 text-sm font-medium text-neutral-700 dark:border-white/15 dark:bg-transparent dark:text-neutral-300"
+                className="border-gradient-hover inline-flex items-center rounded-full bg-neutral-100 px-5 py-2.5 text-sm font-medium text-neutral-700 dark:bg-white/10 dark:text-neutral-300"
               >
                 Visit rabbitrole.com
               </a>

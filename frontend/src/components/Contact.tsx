@@ -12,7 +12,7 @@ export default function Contact() {
           Feel free to reach out
         </p>
         <div className="mx-auto flex max-w-md flex-col items-center gap-4">
-          <GradientReveal className="card-hover w-full rounded-2xl border border-neutral-200 bg-white dark:border-white/10 dark:bg-white/[0.02]">
+          <GradientReveal className="card-hover w-full rounded-2xl bg-white dark:bg-white/[0.02]">
             <a
               href="mailto:GabrielArquizaCruz@gmail.com"
               className="flex w-full items-center gap-4 p-4"
@@ -27,7 +27,7 @@ export default function Contact() {
             </a>
           </GradientReveal>
 
-          <GradientReveal className="card-hover w-full rounded-2xl border border-neutral-200 bg-white dark:border-white/10 dark:bg-white/[0.02]">
+          <GradientReveal className="card-hover w-full rounded-2xl bg-white dark:bg-white/[0.02]">
             <a
               href="https://linkedin.com/in/gabriel-arquiza-cruz"
               target="_blank"
@@ -44,7 +44,7 @@ export default function Contact() {
             </a>
           </GradientReveal>
 
-          <GradientReveal className="card-hover w-full rounded-2xl border border-neutral-200 bg-white dark:border-white/10 dark:bg-white/[0.02]">
+          <GradientReveal className="card-hover w-full rounded-2xl bg-white dark:bg-white/[0.02]">
             <a
               href="https://github.com/gabrielzurc10"
               target="_blank"

@@ -33,7 +33,7 @@ export default function Skills() {
           {SKILL_GROUPS.map((group) => (
             <GradientReveal
               key={group.category}
-              className="card-hover rounded-2xl border border-neutral-200 bg-white p-6 dark:border-white/10 dark:bg-white/[0.02]"
+              className="card-hover rounded-2xl bg-white p-6 dark:bg-white/[0.02]"
             >
               <h3 className="mb-4 text-base font-semibold text-neutral-900 dark:text-white">
                 {group.category}
@@ -42,7 +42,7 @@ export default function Skills() {
                 {group.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-sm text-neutral-600 dark:border-white/10 dark:bg-white/5 dark:text-neutral-300"
+                    className="rounded-full bg-neutral-100 px-3 py-1 text-sm text-neutral-600 dark:bg-white/10 dark:text-neutral-300"
                   >
                     {skill}
                   </span>

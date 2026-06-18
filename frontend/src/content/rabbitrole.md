@@ -6,12 +6,16 @@ your resume actually fits them.
 
 ## The problem
 
+![A job seeker at a fork in winding paths, between scattered resumes and a field of job postings](/rabbitrole-problem.png)
+
 Applying for jobs is a guessing game. Resume tools hand you a generic "ATS score" with no sense of the
 role you're chasing, advice you can't act on, and feedback disconnected from the postings you're
 actually competing for. Tailoring a resume per role, and figuring out which openings are even worth
 applying to, is slow, manual, and unrewarding.
 
 ## The outcome
+
+![rabbitrole at the center, turning a resume into severity-grouped critique, live job-market insights, and openings ranked by fit](/rabbitrole-outcome.png)
 
 rabbitrole closes that loop in one place:
 
@@ -27,11 +31,7 @@ rabbitrole closes that loop in one place:
 
 ### How it flows
 
-```
- ┌─────────┐   ┌────────────┐   ┌─────────┐   ┌────────┐   ┌──────────────┐
- │ Sign in │──▶│ Onboarding │──▶│ Analyze │──▶│ Review │──▶│ Matched jobs │
- └─────────┘   └────────────┘   └─────────┘   └────────┘   └──────────────┘
-```
+![Flow from Sign in to Onboarding to Analyze to Review to Matched jobs](/rabbitrole-flow.png)
 
 - **Sign in:** Cognito, with Google or a passwordless email code.
 - **Onboarding:** name, resume upload, target roles, and search preferences.
@@ -40,6 +40,8 @@ rabbitrole closes that loop in one place:
 - **Matched jobs:** live postings, each with a cosine match % and a "why this match?" on demand.
 
 ## Architecture
+
+![Request flow: browser through CloudFront + S3 to API Gateway and Cognito, into a Spring Boot Lambda calling OpenAI and JSearch, backed by DynamoDB, S3, and SSM, with Terraform and GitHub Actions CI/CD](/rabbitrole-architecture.png)
 
 | Layer | Technology |
 |-------|-----------|
@@ -54,35 +56,9 @@ rabbitrole closes that loop in one place:
 | **Infra** | **Terraform** (single environment), secrets in **SSM Parameter Store**. |
 | **CI/CD** | **GitHub Actions**. Build and test on PRs, deploy on push to `main`. |
 
-```
-                 Browser
-                    │
-                    ▼
-        ┌──────────────────────┐
-        │   CloudFront  +  S3  │ static Next.js export, cached at the edge
-        └──────────┬───────────┘
-                   │ API request + Cognito JWT
-                   ▼
- ┌────────────┐   ┌──────────────────────┐
- │  Cognito   │◀─▶│      API Gateway     │
- └────────────┘   └──────────┬───────────┘
-  sign in / JWT              │
-                             ▼
-                  ┌──────────────────────┐      ┌────────────────────────┐
-                  │       Lambda         │ ───▶ │ OpenAI  (LLM + embeds) │
-                  │ Spring Boot container│ ───▶ │ JSearch (live postings)│
-                  └──────────┬───────────┘      └────────────────────────┘
-             ┌───────────────┼───────────────┐
-             ▼               ▼               ▼
-      ┌────────────┐  ┌────────────┐  ┌────────────┐
-      │  DynamoDB  │  │     S3     │  │    SSM     │
-      │ profiles,  │  │  resume    │  │  secrets   │
-      │ resumes,   │  │  files     │  │            │
-      │ analyses   │  └────────────┘  └────────────┘
-      └────────────┘
-```
-
 ## Engineering decisions
+
+![Abstract flowing circuit paths converging, representing the engineering trade-offs behind rabbitrole](/rabbitrole-decisions.png)
 
 The interesting part isn't the feature list. It's the constraints these choices resolve.
 

@@ -35,8 +35,9 @@ export default function Footer() {
               <span className="text-lg font-bold text-neutral-900 dark:text-white">Gabriel Cruz</span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
-              Software Developer with experience in building scalable cloud-native
-              applications, and automation platforms.
+              Software Engineer with 4+ years of experience 
+              in building scalable cloud-native applications, 
+              and automation workflows.
             </p>
           </div>
 
@@ -101,7 +102,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 flex flex-col items-center gap-4 border-t border-neutral-200 pt-6 dark:border-white/10">
+        <div className="mt-12 flex flex-col items-center gap-4 pt-6">
           <div className="flex items-center gap-5">
             {SOCIAL.map((item) => (
               <a

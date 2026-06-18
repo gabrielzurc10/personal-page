@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -41,9 +42,18 @@ export default function RabbitrolePage() {
           </Link>
 
           <header className="mt-6">
-          <h1 className="text-4xl font-bold tracking-tight text-neutral-900 dark:text-white">
-            rabbitrole
-          </h1>
+          <div className="flex items-center gap-3">
+            <Image
+              src="/rabbitrole-logo.png"
+              alt="rabbitrole logo"
+              width={656}
+              height={710}
+              className="h-10 w-auto sm:h-12"
+            />
+            <h1 className="text-4xl font-bold tracking-tight text-neutral-900 dark:text-white">
+              rabbit<span className="text-gradient-rabbit">role</span>
+            </h1>
+          </div>
           <p className="mt-3 text-lg text-neutral-500 dark:text-neutral-400">
             An AI resume reviewer and job matcher
           </p>
@@ -52,7 +62,7 @@ export default function RabbitrolePage() {
             {TECH.map((tech) => (
               <span
                 key={tech}
-                className="rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-sm text-neutral-600 dark:border-white/10 dark:bg-white/5 dark:text-neutral-300"
+                className="rounded-full bg-neutral-100 px-3 py-1 text-sm text-neutral-600 dark:bg-white/10 dark:text-neutral-300"
               >
                 {tech}
               </span>
@@ -64,7 +74,7 @@ export default function RabbitrolePage() {
               href="https://rabbitrole.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-gradient-hover inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-white shadow-sm dark:bg-white dark:text-black"
+              className="gradient-rabbit btn-gradient-hover inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-white shadow-sm dark:bg-white dark:text-black"
             >
               <span>Visit rabbitrole.com</span>
             </a>

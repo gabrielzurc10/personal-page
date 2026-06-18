@@ -202,10 +202,10 @@ export default function ChatBot() {
 
       {/* Chat Modal */}
       {open && (
-        <div className={`fixed z-50 flex flex-col overflow-hidden rounded-2xl border bg-white shadow-2xl dark:bg-[#171717] ${
+        <div className={`fixed z-50 flex flex-col overflow-hidden rounded-[2rem] bg-white shadow-2xl dark:bg-[#171717] ${
           expanded
-            ? "inset-0 m-auto h-[80vh] max-h-[700px] w-[90vw] max-w-2xl border-neutral-400 dark:border-neutral-600"
-            : "bottom-28 right-4 h-[500px] max-h-[calc(100vh-10rem)] w-[calc(100vw-2rem)] border-neutral-200 dark:border-white/10 sm:bottom-40 sm:right-6 sm:w-[380px] md:w-[420px]"
+            ? "inset-0 m-auto h-[80vh] max-h-[700px] w-[90vw] max-w-2xl"
+            : "bottom-28 right-4 h-[500px] max-h-[calc(100vh-10rem)] w-[calc(100vw-2rem)] sm:bottom-40 sm:right-6 sm:w-[380px] md:w-[420px]"
         }`}>
           {/* Header */}
           <div className="flex items-center justify-between border-b border-neutral-200 bg-primary px-4 py-3 dark:border-white/10 dark:bg-neutral-600">
