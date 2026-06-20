@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import GradientReveal from "./GradientReveal";
 
 const TECH = ["React", "Next.js", "Tailwind CSS", "TypeScript", "Java", "Spring Boot", "AWS Lambda", "DynamoDB", "OpenAI", "Docker", "Amazon S3", "Amazon CloudFront", "Amazon Cognito", "Google OAuth"];
 
@@ -16,7 +15,7 @@ export default function Projects() {
         </p>
 
         <div className="mx-auto max-w-3xl">
-          <GradientReveal className="gradient-rabbit card-hover rounded-2xl bg-white p-6 dark:bg-white/[0.02] sm:p-8">
+          <div className="card-hover rounded-2xl bg-white p-6 dark:bg-white/[0.02] sm:p-8">
             <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary dark:text-neutral-400">
               Featured project
             </p>
@@ -30,7 +29,7 @@ export default function Projects() {
                 className="h-8 w-auto"
               />
               <h3 className="text-2xl font-bold text-neutral-900 dark:text-white">
-                rabbit<span className="text-gradient-rabbit">role</span>
+                rabbitrole
               </h3>
             </div>
 
@@ -58,7 +57,7 @@ export default function Projects() {
             <div className="mt-6 flex flex-wrap items-center gap-3 border-t border-neutral-200 pt-5 dark:border-white/10">
               <Link
                 href="/projects/rabbitrole"
-                className="btn-gradient-hover inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-white shadow-sm dark:bg-white dark:text-black"
+                className="inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-neutral-700 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
               >
                 <span>View case study</span>
               </Link>
@@ -66,12 +65,12 @@ export default function Projects() {
                 href="https://rabbitrole.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border-gradient-hover inline-flex items-center rounded-full bg-neutral-100 px-5 py-2.5 text-sm font-medium text-neutral-700 dark:bg-white/10 dark:text-neutral-300"
+                className="inline-flex items-center rounded-full bg-neutral-100 px-5 py-2.5 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-200 dark:bg-white/10 dark:text-neutral-300 dark:hover:bg-white/20"
               >
                 Visit rabbitrole.com
               </a>
             </div>
-          </GradientReveal>
+          </div>
         </div>
       </div>
     </section>

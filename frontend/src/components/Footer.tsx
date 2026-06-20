@@ -24,7 +24,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-neutral-200 bg-white dark:border-white/10 dark:bg-[#0d0d0d]">
+    <footer className="bg-white dark:bg-[#0d0d0d]">
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           {/* Brand */}
@@ -35,9 +35,9 @@ export default function Footer() {
               <span className="text-lg font-bold text-neutral-900 dark:text-white">Gabriel Cruz</span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
-              Software Engineer with 4+ years of experience 
-              in building scalable cloud-native applications, 
-              and automation workflows.
+              Software Engineer with 4+ years building full-stack,
+              cloud-native applications across HR technology, telecom,
+              and higher education.
             </p>
           </div>
 

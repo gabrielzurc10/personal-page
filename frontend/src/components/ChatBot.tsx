@@ -315,7 +315,7 @@ export default function ChatBot() {
           )}
 
           {/* Input */}
-          <div className="border-t border-neutral-200 p-3 dark:border-white/10">
+          <div className="p-3">
             <div className="flex gap-2">
               <input
                 ref={inputRef}
@@ -324,7 +324,7 @@ export default function ChatBot() {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Ask about Gabriel..."
-                className="flex-1 rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-base text-neutral-900 outline-none transition-colors placeholder:text-neutral-400 focus:border-primary dark:border-white/10 dark:bg-white/5 dark:text-white dark:placeholder:text-neutral-500 dark:focus:border-white sm:text-sm"
+                className="flex-1 rounded-full bg-neutral-100 px-4 py-2.5 text-base text-neutral-900 outline-none transition-colors placeholder:text-neutral-400 dark:bg-white/10 dark:text-white dark:placeholder:text-neutral-500 sm:text-sm"
                 disabled={loading}
               />
               <button

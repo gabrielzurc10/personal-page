@@ -1,37 +1,15 @@
-import GradientReveal from "./GradientReveal";
-
 const EXPERIENCES = [
   {
-    title: "Software Developer IV",
-    company: "Paycom",
-    location: "Irving, Texas",
-    period: "June 2025 — May 2026",
-    bullets: [
-      "Led the design and delivery of 5+ automation features for Paycom's onboarding platform, applying test-driven development to ship reliably for 36,000+ client organizations ranging from small businesses to Fortune 500 enterprises.",
-      "Automated employee data flow across the Applicant Tracking, Background Checks, and Onboarding modules through close collaboration with each module team, eliminating manual re-entry and cutting average HR processing time per new hire by 80%.",
-      "Mentored junior software developers through code reviews, technical guidance, pair programming, and collaborative debugging sessions, improving development velocity, code quality, and adherence to engineering best practices across the team.",
-    ],
-  },
-  {
-    title: "Software Developer III",
-    company: "Paycom",
-    location: "Irving, Texas",
-    period: "May 2024 — June 2025",
-    bullets: [
-      "Architected and developed an onboarding email module with a dashboard built in React and a Control-M–orchestrated queue-worker platform, processing thousands of concurrent async jobs to deliver 100,000+ new hire emails per month at scale.",
-      "Built and containerized microservices with REST APIs in PHP for managing communication configurations, using Docker and Kubernetes to orchestrate deployment and reducing manual email coordination time for HR teams by 60%.",
-      "Streamlined the rehire workflow for Paycom by leveraging Couchbase to cache and surface prior employee records, reducing manual PAF submissions and saving client HR teams an estimated 1,000+ hours annually across the client base.",
-    ],
-  },
-  {
-    title: "Software Developer II",
+    title: "Software Developer IV, III, II",
     company: "Paycom",
     location: "Grapevine, Texas",
-    period: "January 2023 — May 2024",
+    period: "January 2023 — May 2026",
     bullets: [
-      "Led development of international onboarding workflows across five countries, building an MVC architecture with PHP and JavaScript that dynamically rendered country-specific forms, streamlining onboarding and reducing manual setup effort by 80%.",
-      "Designed, normalized, and optimized MySQL database schemas and query performance for high-traffic onboarding endpoints, improving average response times by an estimated 40%.",
-      "Delivered features through two-week Agile sprints, collaborating with a cross-functional team to maintain steady releases across planning, stand-ups, and retrospectives.",
+      "Led development of 5 automation initiatives across event-driven microservices, workflow engines, and REST API integrations, partnering with HR stakeholders to eliminate an estimated 1,000+ hours of manual work per year.",
+      "Designed a high-throughput communication platform on a Kafka-backed delivery pipeline with a React and TypeScript frontend, delivering 100,000+ emails monthly and replacing a manual, cross-team coordination process.",
+      "Containerized and deployed microservices on Docker and Kubernetes, building GitLab CI/CD pipelines with automated unit tests and lint checks to standardize releases and block broken builds.",
+      "Developed a configurable form-templating system that localized onboarding across five countries, cutting manual setup time by 80%.",
+      "Optimized high-traffic data endpoints by rewriting MySQL joins, adding indexes, and introducing Couchbase caching, reducing p95 read latency by 50%.",
     ],
   },
   {
@@ -40,9 +18,9 @@ const EXPERIENCES = [
     location: "Houston, Texas",
     period: "October 2021 — December 2022",
     bullets: [
-      "Delivered full stack solutions for campus web applications used daily by 47,000+ students and 3,000+ faculty, developing backend services in Java and user interfaces with JavaScript.",
-      "Modernized the UI/UX of the course marketplace and student information dashboard, leveraging JavaScript on the frontend and Java on the backend to improve navigation, accessibility, and visual consistency.",
-      "Integrated PeopleSoft campus solution software with custom-built tools and tuned PostgreSQL schemas, improving query performance on high-volume endpoints.",
+      "Delivered full-stack web applications used daily by 47,000+ students and faculty to register for courses, submit and access grades, and manage records, replacing manual, paper-based processes.",
+      "Rebuilt the student information dashboard frontend in JavaScript with responsive mobile support and WCAG-compliant screen-reader accessibility, and refactored Java REST APIs to cut page load times by 70%.",
+      "Normalized PostgreSQL schemas to eliminate redundant data slowing high-volume endpoints, reducing query times by 50%.",
     ],
   },
   {
@@ -51,9 +29,8 @@ const EXPERIENCES = [
     location: "Frisco, Texas",
     period: "May 2022 — August 2022",
     bullets: [
-      "Developed full stack customer location visualization for support agents, with Spring Boot REST APIs in Java and Angular dashboard components, reducing average call-handle time by 60% and accelerating issue resolution.",
-      "Authored and published an internal Node.js npm package that standardized API authorization across T-Mobile services, eliminating repeated auth boilerplate for 10+ engineering teams.",
-      "Delivered projects through full Agile development cycles and presented sprint demos to development teams and stakeholders, aligning on priorities and incorporating feedback across iterations.",
+      "Equipped support agents with a TypeScript and Angular dashboard backed by Java and Spring Boot REST APIs that plotted customer location on T-Mobile's 5G coverage map, speeding coverage diagnosis and reducing average call-handle time by 30%.",
+      "Published an internal JavaScript library that standardized proof-of-possession token authorization across T-Mobile services, driving adoption across 5+ engineering teams and saving an estimated 200+ hours of boilerplate setup.",
     ],
   },
 ];
@@ -76,7 +53,8 @@ export default function Experience() {
             {EXPERIENCES.map((exp, index) => (
               <div key={index} className="relative md:pl-12">
                 {/* Timeline dot */}
-                <GradientReveal className="card-hover rounded-2xl bg-white p-6 dark:bg-white/[0.02]" dot>
+                <div className="absolute left-[11px] top-0 hidden h-2.5 w-2.5 rounded-full bg-primary dark:bg-white md:block" />
+                <div className="card-hover rounded-2xl bg-white p-6 dark:bg-white/[0.02]">
                   <div className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                       <h3 className="text-lg font-semibold text-neutral-900 dark:text-white">
@@ -101,7 +79,7 @@ export default function Experience() {
                       </li>
                     ))}
                   </ul>
-                </GradientReveal>
+                </div>
               </div>
             ))}
           </div>

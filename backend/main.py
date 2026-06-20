@@ -11,7 +11,6 @@ from openai import OpenAI
 from pydantic import BaseModel
 from gabriel_context import GABRIEL_CONTEXT
 from resume_context import RESUME_CONTEXT
-from summary_context import SUMMARY_CONTEXT
 from rabbitrole_context import RABBITROLE_CONTEXT
 from winston_context import WINSTON_CONTEXT
 
@@ -61,9 +60,6 @@ Strict rules you must follow:
 
 About Gabriel:
 {GABRIEL_CONTEXT}
-
-Here is Gabriel's professional summary for reference:
-{SUMMARY_CONTEXT}
 
 Here is Gabriel's resume for reference:
 {RESUME_CONTEXT}

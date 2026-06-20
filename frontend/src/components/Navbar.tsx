@@ -24,10 +24,7 @@ export default function Navbar({ showSections = true }: { showSections?: boolean
     const ids = NAV_LINKS.map((link) => link.href.slice(1));
 
     const onScroll = () => {
-      // Switch when a section's content passes the viewport center, matching the
-      // card gradient zone (GradientReveal highlights cards centered in the
-      // viewport). So the header advances to the next section right as the
-      // previous section's card loses its gradient.
+      // Switch when a section's content passes the viewport center.
       const offset = window.innerHeight / 2;
 
       // The active section is the last one whose top has scrolled past the

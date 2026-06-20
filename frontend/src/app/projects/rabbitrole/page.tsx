@@ -51,7 +51,7 @@ export default function RabbitrolePage() {
               className="h-10 w-auto sm:h-12"
             />
             <h1 className="text-4xl font-bold tracking-tight text-neutral-900 dark:text-white">
-              rabbit<span className="text-gradient-rabbit">role</span>
+              rabbitrole
             </h1>
           </div>
           <p className="mt-3 text-lg text-neutral-500 dark:text-neutral-400">
@@ -74,7 +74,7 @@ export default function RabbitrolePage() {
               href="https://rabbitrole.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="gradient-rabbit btn-gradient-hover inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-white shadow-sm dark:bg-white dark:text-black"
+              className="inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-neutral-700 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
             >
               <span>Visit rabbitrole.com</span>
             </a>
@@ -91,7 +91,7 @@ export default function RabbitrolePage() {
             href="https://rabbitrole.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="gradient-rabbit btn-gradient-hover inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-white shadow-sm dark:bg-white dark:text-black"
+            className="inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-neutral-700 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
           >
             <span>Visit rabbitrole.com</span>
           </a>

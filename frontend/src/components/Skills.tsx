@@ -1,21 +1,23 @@
-import GradientReveal from "./GradientReveal";
-
 const SKILL_GROUPS = [
   {
     category: "Languages",
-    skills: ["JavaScript", "TypeScript", "Java", "PHP", "Python", "C++", "C#", "SQL", "HTML", "CSS"],
+    skills: ["Java", "JavaScript", "TypeScript", "Python", "PHP", "C#", "C++", "SQL", "HTML", "CSS"],
   },
   {
     category: "Frameworks & Libraries",
-    skills: ["React", "Angular", "Spring Boot", "Node.js", "Next.js", "OpenAI API", "FastAPI", "Tailwind"],
+    skills: ["Spring Boot", "React", "Angular", "Node.js", "Next.js", "FastAPI", "Tailwind CSS", "OpenAI API"],
   },
   {
     category: "Databases & Caching",
-    skills: ["MySQL", "PostgreSQL", "MongoDB", "Firestore", "DynamoDB", "Redis", "Couchbase", "NoSQL"],
+    skills: ["MySQL", "PostgreSQL", "DynamoDB", "Couchbase"],
   },
   {
-    category: "Deployment & Cloud Platforms",
-    skills: ["Git", "GitHub Actions", "GitLab CI/CD", "npm", "Docker", "Kubernetes", "AWS", "GCP", "Terraform", "Gradle"],
+    category: "Cloud & DevOps",
+    skills: ["AWS Lambda", "S3", "CloudFront", "API Gateway", "Cognito", "Docker", "Kubernetes", "Kafka", "Terraform", "GitLab CI/CD", "GitHub Actions", "Git", "Gradle", "npm"],
+  },
+  {
+    category: "Practices",
+    skills: ["Agile", "Scrum", "RESTful API Design", "Microservices", "Event-Driven Architecture", "CI/CD", "Test-Driven Development", "Cross-Functional Collaboration", "Code Review", "Technical Mentorship"],
   },
 ];
 
@@ -31,7 +33,7 @@ export default function Skills() {
         </p>
         <div className="grid gap-6 sm:grid-cols-2">
           {SKILL_GROUPS.map((group) => (
-            <GradientReveal
+            <div
               key={group.category}
               className="card-hover rounded-2xl bg-white p-6 dark:bg-white/[0.02]"
             >
@@ -48,7 +50,7 @@ export default function Skills() {
                   </span>
                 ))}
               </div>
-            </GradientReveal>
+            </div>
           ))}
         </div>
       </div>

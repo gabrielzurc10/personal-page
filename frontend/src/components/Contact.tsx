@@ -1,5 +1,4 @@
 import Image from "next/image";
-import GradientReveal from "./GradientReveal";
 
 export default function Contact() {
   return (
@@ -12,7 +11,7 @@ export default function Contact() {
           Feel free to reach out
         </p>
         <div className="mx-auto flex max-w-md flex-col items-center gap-4">
-          <GradientReveal className="card-hover w-full rounded-2xl bg-white dark:bg-white/[0.02]">
+          <div className="card-hover w-full rounded-2xl bg-white dark:bg-white/[0.02]">
             <a
               href="mailto:GabrielArquizaCruz@gmail.com"
               className="flex w-full items-center gap-4 p-4"
@@ -25,9 +24,9 @@ export default function Contact() {
                 <p className="text-sm font-medium text-neutral-900 dark:text-white">GabrielArquizaCruz@gmail.com</p>
               </div>
             </a>
-          </GradientReveal>
+          </div>
 
-          <GradientReveal className="card-hover w-full rounded-2xl bg-white dark:bg-white/[0.02]">
+          <div className="card-hover w-full rounded-2xl bg-white dark:bg-white/[0.02]">
             <a
               href="https://linkedin.com/in/gabriel-arquiza-cruz"
               target="_blank"
@@ -42,9 +41,9 @@ export default function Contact() {
                 <p className="text-sm font-medium text-neutral-900 dark:text-white">gabriel-arquiza-cruz</p>
               </div>
             </a>
-          </GradientReveal>
+          </div>
 
-          <GradientReveal className="card-hover w-full rounded-2xl bg-white dark:bg-white/[0.02]">
+          <div className="card-hover w-full rounded-2xl bg-white dark:bg-white/[0.02]">
             <a
               href="https://github.com/gabrielzurc10"
               target="_blank"
@@ -59,7 +58,7 @@ export default function Contact() {
                 <p className="text-sm font-medium text-neutral-900 dark:text-white">gabrielzurc10</p>
               </div>
             </a>
-          </GradientReveal>
+          </div>
         </div>
       </div>
     </section>
