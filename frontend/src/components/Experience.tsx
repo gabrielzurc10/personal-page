@@ -1,26 +1,25 @@
 const EXPERIENCES = [
   {
-    title: "Software Developer IV, III, II",
+    title: "Software Engineer IV, III, II",
     company: "Paycom",
     location: "Grapevine, Texas",
     period: "January 2023 — May 2026",
     bullets: [
-      "Led development of 5 automation initiatives across event-driven microservices, workflow engines, and REST API integrations, partnering with HR stakeholders to eliminate an estimated 1,000+ hours of manual work per year.",
-      "Designed a high-throughput communication platform on a Kafka-backed delivery pipeline with a React and TypeScript frontend, delivering 100,000+ emails monthly and replacing a manual, cross-team coordination process.",
-      "Containerized and deployed microservices on Docker and Kubernetes, building GitLab CI/CD pipelines with automated unit tests and lint checks to standardize releases and block broken builds.",
-      "Developed a configurable form-templating system that localized onboarding across five countries, cutting manual setup time by 80%.",
-      "Optimized high-traffic data endpoints by rewriting MySQL joins, adding indexes, and introducing Couchbase caching, reducing p95 read latency by 50%.",
+      "Led development of 5 automation initiatives across event-driven microservices, workflow engines, and REST API integrations, partnering with HR teams to eliminate an estimated 1,000 hours of manual work per year.",
+      "Designed and built a notification scheduling system to automate onboarding communications, reducing email coordination time by 80%.",
+      "Developed a configurable form-templating system that standardized onboarding across 5 countries, reducing setup time by 60%.",
+      "Implemented CI/CD pipelines to automate testing and deployment, cutting release time from 2 hours to 20 minutes.",
     ],
   },
   {
-    title: "Application Developer",
+    title: "Software Engineer",
     company: "University of Houston, Enterprise Systems",
     location: "Houston, Texas",
     period: "October 2021 — December 2022",
     bullets: [
-      "Delivered full-stack web applications used daily by 47,000+ students and faculty to register for courses, submit and access grades, and manage records, replacing manual, paper-based processes.",
-      "Rebuilt the student information dashboard frontend in JavaScript with responsive mobile support and WCAG-compliant screen-reader accessibility, and refactored Java REST APIs to cut page load times by 70%.",
-      "Normalized PostgreSQL schemas to eliminate redundant data slowing high-volume endpoints, reducing query times by 50%.",
+      "Delivered full-stack web applications used daily by more than 47,000 students and faculty, automating manual processes by 55%.",
+      "Enhanced the student information dashboard and course marketplace by refactoring REST APIs, reducing page load times by 70%.",
+      "Optimized database schemas by rewriting joins, adding indexes, and introducing caching, reducing query times by 50%.",
     ],
   },
   {
@@ -29,8 +28,8 @@ const EXPERIENCES = [
     location: "Frisco, Texas",
     period: "May 2022 — August 2022",
     bullets: [
-      "Equipped support agents with a TypeScript and Angular dashboard backed by Java and Spring Boot REST APIs that plotted customer location on T-Mobile's 5G coverage map, speeding coverage diagnosis and reducing average call-handle time by 30%.",
-      "Published an internal JavaScript library that standardized proof-of-possession token authorization across T-Mobile services, driving adoption across 5+ engineering teams and saving an estimated 200+ hours of boilerplate setup.",
+      "Accelerated customer support by releasing a customer location indicator component on T-Mobile's 5G coverage map, speeding coverage diagnosis and reducing average call-handle time by 30%.",
+      "Published an internal Node.js library that standardized proof-of-possession token authorization across T-Mobile services, driving adoption across 5 engineering teams and saving an estimated 200 hours of boilerplate setup.",
     ],
   },
 ];

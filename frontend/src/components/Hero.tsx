@@ -4,7 +4,7 @@ const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
 
 export default function Hero() {
   return (
-    <section className="flex min-h-screen items-center justify-center px-6 pt-16">
+    <section className="flex min-h-dvh items-center justify-center px-6 pt-20 sm:pt-16">
       <div className="card-hover mx-auto flex max-w-6xl flex-col items-center gap-8 rounded-2xl bg-white p-8 dark:bg-white/[0.02] sm:gap-12 sm:p-12 md:flex-row md:gap-16">
         <div className="shrink-0">
           <Image

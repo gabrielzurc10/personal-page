@@ -46,7 +46,7 @@ rabbitrole closes that loop in one place:
 | Layer | Technology |
 |-------|-----------|
 | **Frontend** | Next.js (static export), React, TypeScript, Tailwind. Hosted on **S3 + CloudFront**. |
-| **Backend** | Java 21, Spring Boot 3 (Gradle Kotlin DSL). Packaged as a **container image AWS Lambda** (via the Lambda Web Adapter), fronted by **API Gateway**. |
+| **Backend** | Java 21, Spring Boot 3 (Gradle Kotlin DSL). Packaged as a **zip AWS Lambda** on the Java 21 managed runtime **with SnapStart** (via aws-serverless-java-container), fronted by **API Gateway**. |
 | **AI** | OpenAI `gpt-4o-mini` (analysis), `text-embedding-3-small` (matching and RAG). |
 | **RAG** | Resume critique grounded in live job postings for the target role. |
 | **Database** | **DynamoDB** (on demand) via the AWS SDK. Always warm, no VPC. |
@@ -62,14 +62,16 @@ rabbitrole closes that loop in one place:
 
 The interesting part isn't the feature list. It's the constraints these choices resolve.
 
-### Spring Boot on Lambda via the Lambda Web Adapter
+### Spring Boot on Lambda with SnapStart
 
-The backend runs as an **unmodified web server**, with no Lambda specific handler. The Web Adapter
-translates API Gateway events to and from HTTP, so the same image runs locally (`./gradlew bootRun`)
-and in production. The trade off is **no SnapStart** (it ships as a zip), so a cold start after idle
-pays Spring's full startup. That is *mitigated, not hidden*: a 2 GB memory size (more CPU during init)
-plus a frontend ping to `/healthz` fired from the landing and login pages, so the container wakes while
-the user is reading or typing, and their first real request lands warm.
+The backend ships as a **zip on the Java 21 managed runtime**. `aws-serverless-java-container` feeds API
+Gateway HTTP API v2 events straight into the Spring MVC stack — no running web server, no Lambda-specific
+controller code (the same app still runs locally with `./gradlew bootRun`, which keeps an embedded Tomcat
+for dev only). Java cold starts are heavy, so the function uses **SnapStart**: Lambda snapshots the
+fully-initialized JVM + Spring context at publish time and restores from it, cutting cold starts from
+several seconds to sub-second — and it's **free** on the Java runtime. Each deploy publishes a new version
+and repoints a `live` alias at it; API Gateway invokes the alias, so requests always hit a SnapStart'd
+version. A 2 GB memory size keeps the restore fast and gives the analyze call (JSearch + OpenAI) headroom.
 
 ### DynamoDB, on demand, and no VPC
 

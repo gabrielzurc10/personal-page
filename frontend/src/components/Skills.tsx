@@ -13,7 +13,7 @@ const SKILL_GROUPS = [
   },
   {
     category: "Cloud & DevOps",
-    skills: ["AWS Lambda", "S3", "CloudFront", "API Gateway", "Cognito", "Docker", "Kubernetes", "Kafka", "Terraform", "GitLab CI/CD", "GitHub Actions", "Git", "Gradle", "npm"],
+    skills: ["AWS", "Lambda", "S3", "CloudFront", "API Gateway", "Cognito", "Docker", "Kubernetes", "Kafka", "Terraform", "GitLab CI/CD", "GitHub Actions", "Git", "Gradle", "npm"],
   },
   {
     category: "Practices",
@@ -23,7 +23,7 @@ const SKILL_GROUPS = [
 
 export default function Skills() {
   return (
-    <section className="px-6 pb-16 pt-4 sm:pb-20 md:pb-24">
+    <section className="px-6 pb-16 pt-12 sm:pb-20 sm:pt-4 md:pb-24">
       <div id="skills" className="mx-auto max-w-6xl">
         <h2 className="mb-4 text-center text-3xl font-bold text-neutral-900 dark:text-white">
           Skills
@@ -32,10 +32,15 @@ export default function Skills() {
           Technologies and tools I work with
         </p>
         <div className="grid gap-6 sm:grid-cols-2">
-          {SKILL_GROUPS.map((group) => (
+          {SKILL_GROUPS.map((group, index) => {
+            const isLastAlone =
+              index === SKILL_GROUPS.length - 1 && SKILL_GROUPS.length % 2 === 1;
+            return (
             <div
               key={group.category}
-              className="card-hover rounded-2xl bg-white p-6 dark:bg-white/[0.02]"
+              className={`card-hover rounded-2xl bg-white p-6 dark:bg-white/[0.02]${
+                isLastAlone ? " sm:col-span-2 sm:mx-auto sm:w-[calc(50%-0.75rem)]" : ""
+              }`}
             >
               <h3 className="mb-4 text-base font-semibold text-neutral-900 dark:text-white">
                 {group.category}
@@ -51,7 +56,8 @@ export default function Skills() {
                 ))}
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
