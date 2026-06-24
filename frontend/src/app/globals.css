@@ -30,6 +30,33 @@ body {
   overflow-x: hidden;
 }
 
+/* Scrollbar: no track background, solid black thumb. */
+* {
+  scrollbar-color: #000000 transparent;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border-radius: 9999px;
+}
+
+/* Dark mode: white thumb so it stays visible. The .dark class lives on <html>,
+   which owns the page scrollbar, so match the element itself and descendants. */
+:where(.dark),
+:where(.dark) * {
+  scrollbar-color: #ffffff transparent;
+}
+:where(.dark)::-webkit-scrollbar-thumb,
+:where(.dark) ::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+}
+
 /* Higher-contrast body text: blacker in light mode, whiter in dark mode.
    Only the muted text utilities are shifted — headings already use
    neutral-900 / white. Scoped by the .dark class so each mode moves the right

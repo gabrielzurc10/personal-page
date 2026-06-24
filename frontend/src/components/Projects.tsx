@@ -24,8 +24,8 @@ export default function Projects() {
               <Image
                 src="/rabbitrole-logo.png"
                 alt="rabbitrole logo"
-                width={656}
-                height={710}
+                width={719}
+                height={721}
                 className="h-8 w-auto"
               />
               <h3 className="text-2xl font-bold text-neutral-900 dark:text-white">

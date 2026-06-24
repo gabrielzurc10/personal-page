@@ -46,8 +46,8 @@ export default function RabbitrolePage() {
             <Image
               src="/rabbitrole-logo.png"
               alt="rabbitrole logo"
-              width={656}
-              height={710}
+              width={719}
+              height={721}
               className="h-10 w-auto sm:h-12"
             />
             <h1 className="text-4xl font-bold tracking-tight text-neutral-900 dark:text-white">

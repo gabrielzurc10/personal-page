@@ -17,8 +17,8 @@ PROFESSIONAL EXPERIENCE
 Paycom | Cloud-based HCM and payroll software​
  
 Software Engineer IV, III, II | Grapevine, TX | January 2023 – May 2026 
-•​ Led development of 5 automation initiatives across event-driven microservices, workflow engines, and REST API integrations, 
-partnering with HR teams to eliminate an estimated 1,000 hours of manual work per year. 
+•​ Led development of 5 automation initiatives across event-driven microservices, workflow engines, and REST API integrations, partnering 
+with HR teams to eliminate an estimated 1,000 hours of manual work per year. 
 •​ Designed and built a notification scheduling system to automate onboarding communications, reducing email coordination time by 80%. 
 •​ Developed a configurable form-templating system that standardized onboarding across 5 countries, reducing setup time by 60%. 
 •​ Implemented CI/CD pipelines to automate testing and deployment, cutting release time from 2 hours to 20 minutes. 
