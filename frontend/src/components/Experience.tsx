@@ -53,7 +53,7 @@ export default function Experience() {
               <div key={index} className="relative md:pl-12">
                 {/* Timeline dot */}
                 <div className="absolute left-[11px] top-0 hidden h-2.5 w-2.5 rounded-full bg-primary dark:bg-white md:block" />
-                <div className="card-hover rounded-2xl bg-white p-6 dark:bg-white/[0.02]">
+                <div className="card-hover rounded-2xl bg-white p-6 dark:bg-white/[0.05]">
                   <div className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                       <h3 className="text-lg font-semibold text-neutral-900 dark:text-white">

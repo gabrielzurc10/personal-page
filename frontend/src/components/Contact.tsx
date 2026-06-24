@@ -11,7 +11,7 @@ export default function Contact() {
           Feel free to reach out
         </p>
         <div className="mx-auto flex max-w-md flex-col items-center gap-4">
-          <div className="card-hover w-full rounded-2xl bg-white dark:bg-white/[0.02]">
+          <div className="card-hover w-full rounded-2xl bg-white dark:bg-white/[0.05]">
             <a
               href="mailto:GabrielArquizaCruz@gmail.com"
               className="flex w-full items-center gap-4 p-4"
@@ -26,7 +26,7 @@ export default function Contact() {
             </a>
           </div>
 
-          <div className="card-hover w-full rounded-2xl bg-white dark:bg-white/[0.02]">
+          <div className="card-hover w-full rounded-2xl bg-white dark:bg-white/[0.05]">
             <a
               href="https://linkedin.com/in/gabriel-arquiza-cruz"
               target="_blank"
@@ -43,7 +43,7 @@ export default function Contact() {
             </a>
           </div>
 
-          <div className="card-hover w-full rounded-2xl bg-white dark:bg-white/[0.02]">
+          <div className="card-hover w-full rounded-2xl bg-white dark:bg-white/[0.05]">
             <a
               href="https://github.com/gabrielzurc10"
               target="_blank"

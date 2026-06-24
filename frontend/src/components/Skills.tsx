@@ -23,7 +23,7 @@ const SKILL_GROUPS = [
 
 export default function Skills() {
   return (
-    <section className="px-6 pb-16 pt-12 sm:pb-20 sm:pt-4 md:pb-24">
+    <section className="px-6 py-16 sm:py-20 md:py-24">
       <div id="skills" className="mx-auto max-w-6xl">
         <h2 className="mb-4 text-center text-3xl font-bold text-neutral-900 dark:text-white">
           Skills
@@ -38,7 +38,7 @@ export default function Skills() {
             return (
             <div
               key={group.category}
-              className={`card-hover rounded-2xl bg-white p-6 dark:bg-white/[0.02]${
+              className={`card-hover rounded-2xl bg-white p-6 dark:bg-white/[0.05]${
                 isLastAlone ? " sm:col-span-2 sm:mx-auto sm:w-[calc(50%-0.75rem)]" : ""
               }`}
             >

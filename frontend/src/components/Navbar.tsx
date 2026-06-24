@@ -115,7 +115,8 @@ export default function Navbar({ showSections = true }: { showSections?: boolean
 
         {/* Mobile controls */}
         <div className="ml-auto flex items-center gap-4 md:hidden">
-          <ThemeToggle />
+          {/* Without a menu, keep the toggle in the bar; otherwise it lives inside the menu. */}
+          {!showSections && <ThemeToggle />}
           {showSections && (
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -134,17 +135,21 @@ export default function Navbar({ showSections = true }: { showSections?: boolean
 
       {/* Mobile nav */}
       {showSections && mobileOpen && (
-        <div className="border-t border-neutral-200/60 bg-white px-6 py-4 dark:border-white/10 dark:bg-[#0d0d0d] md:hidden">
+        <div className="flex flex-col items-center bg-white px-6 py-4 dark:bg-[#0d0d0d] md:hidden">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className={`block ${linkClass(link.href)} ${isActive(link.href) ? "bg-black dark:bg-white" : ""}`}
+              className={`inline-block ${linkClass(link.href)} ${isActive(link.href) ? "bg-black dark:bg-white" : ""}`}
             >
               {link.label}
             </a>
           ))}
+          {/* Appearance switch inside the hamburger menu */}
+          <div className="mt-4 flex w-full justify-center">
+            <ThemeToggle />
+          </div>
         </div>
       )}
     </nav>

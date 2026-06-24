@@ -15,7 +15,7 @@ export default function Projects() {
         </p>
 
         <div className="mx-auto max-w-3xl">
-          <div className="card-hover rounded-2xl bg-white p-6 dark:bg-white/[0.02] sm:p-8">
+          <div className="card-hover rounded-2xl bg-white p-6 dark:bg-white/[0.05] sm:p-8">
             <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary dark:text-neutral-400">
               Featured project
             </p>

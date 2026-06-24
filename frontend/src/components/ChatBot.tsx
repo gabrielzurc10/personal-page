@@ -208,7 +208,7 @@ export default function ChatBot() {
             : "bottom-28 right-4 h-[500px] max-h-[calc(100vh-10rem)] w-[calc(100vw-2rem)] sm:bottom-40 sm:right-6 sm:w-[380px] md:w-[420px]"
         }`}>
           {/* Header */}
-          <div className="flex items-center justify-between border-b border-neutral-200 bg-primary px-4 py-3 dark:border-white/10 dark:bg-neutral-600">
+          <div className="flex items-center justify-between bg-primary px-4 py-3 dark:bg-neutral-600">
             <div className="flex items-center gap-2">
               <span className="font-semibold text-white dark:text-white">
                 Chat with Winston
