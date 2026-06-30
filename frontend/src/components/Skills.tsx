@@ -1,23 +1,23 @@
 const SKILL_GROUPS = [
   {
     category: "Languages",
-    skills: ["Java", "JavaScript", "TypeScript", "Python", "PHP", "C#", "C++", "SQL", "HTML", "CSS"],
+    skills: ["Java", "JavaScript", "TypeScript", "Python", "PHP", "C#", "C++", "Bash", "SQL", "GraphQL", "HTML", "CSS"],
   },
   {
     category: "Frameworks & Libraries",
-    skills: ["Spring Boot", "React", "Angular", "Node.js", "Next.js", "FastAPI", "Tailwind CSS", "OpenAI API"],
+    skills: ["Spring Boot", ".NET", "React", "Redux", "Express", "Angular", "Node.js", "Next.js", "FastAPI", "Tailwind", "Pandas", "LangChain"],
   },
   {
     category: "Databases & Caching",
-    skills: ["MySQL", "PostgreSQL", "DynamoDB", "Couchbase"],
+    skills: ["MySQL", "MSSQL", "PostgreSQL", "DynamoDB", "MongoDB", "Redis", "Couchbase"],
   },
   {
     category: "Cloud & DevOps",
-    skills: ["AWS", "Lambda", "S3", "CloudFront", "API Gateway", "Cognito", "Docker", "Kubernetes", "Kafka", "Terraform", "GitLab CI/CD", "GitHub Actions", "Git", "Gradle", "npm"],
+    skills: ["AWS", "GCP", "Microsoft Azure", "Lambda", "S3", "CloudFront", "CloudWatch", "API Gateway", "Cognito", "Docker", "Kubernetes", "Kafka", "RabbitMQ", "Terraform", "GitLab CI/CD", "GitHub Actions", "Git", "Gradle", "Maven", "npm", "Webpack"],
   },
   {
     category: "Practices",
-    skills: ["Agile", "Scrum", "RESTful API Design", "Microservices", "Event-Driven Architecture", "CI/CD", "Test-Driven Development", "Cross-Functional Collaboration", "Code Review", "Technical Mentorship"],
+    skills: ["Agile", "RESTful API Design", "Microservices", "Artificial Intelligence", "Retrieval-Augmented Generation", "Event-Driven Architecture", "CI/CD", "Test-Driven Development", "Distributed Systems", "Cloud Platform Architecture", "Cross-Functional Collaboration", "System Design"],
   },
 ];
 

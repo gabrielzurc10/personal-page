@@ -125,7 +125,10 @@ async def chat(request: ChatRequest):
         full_response = ""
         try:
             stream = client.chat.completions.create(
-                model="gpt-4o-mini",
+                model="gpt-5-mini",
+                # Winston just rephrases injected context, so keep reasoning
+                # minimal to stay fast and avoid paying for reasoning tokens.
+                reasoning_effort="minimal",
                 messages=[
                     {"role": "system", "content": SYSTEM_PROMPT},
                     *messages,
