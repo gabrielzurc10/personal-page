@@ -34,10 +34,10 @@ export default function Footer() {
               <Image src="/dark-icon.png" alt="Gabriel Cruz" width={36} height={36} className="hidden dark:block" />
               <span className="text-lg font-bold text-neutral-900 dark:text-white">Gabriel Cruz</span>
             </Link>
-            <p className="mt-4 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
-              Software Engineer with 4+ years building full-stack,
-              cloud-native applications across HR technology, telecom,
-              and higher education.
+            <p className="mt-4 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400"> 
+              Software Engineer with over 4 years of experience 
+              designing, developing, and deploying scalable 
+              full-stack applications. 
             </p>
           </div>
 

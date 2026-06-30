@@ -24,13 +24,12 @@ export default function Hero() {
             Gabriel Cruz
           </h1>
           <p className="mb-8 max-w-xl text-lg leading-relaxed text-neutral-500 dark:text-neutral-400">
-            Software Engineer with 4+ years building full-stack,
-            cloud-native applications across HR technology, telecom,
-            and higher education. Skilled in Java and Spring Boot
-            microservices, React and TypeScript frontends, and AWS
-            serverless architecture, with a record of shipping scalable
-            systems and partnering with cross-functional teams to deliver
-            measurable business impact.
+            Software Engineer with over 4 years of experience designing, developing, 
+            and deploying scalable full-stack applications. Shipped enterprise-scale 
+            software across HR/payroll, telecommunications, and higher education 
+            organizations, owning projects from requirements through deployment, and 
+            driving operational efficiency through automation that saves 
+            organizations thousands of hours annually.
           </p>
           <div className="flex flex-wrap justify-center gap-4 md:justify-start">
             <a
