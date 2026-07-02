@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Gabriel Cruz",
   description:
-    "Software engineer with experience in React, TypeScript, Python, AWS, and more.",
+    "Software Developer with over 4 years of experience designing, developing, and maintaining software solutions.",
   icons: {
     icon: [
       { url: "/light-icon.png", media: "(prefers-color-scheme: light)" },

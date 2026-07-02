@@ -1,7 +1,7 @@
 GABRIEL CRUZ 
 Dallas, TX | (832) 620-9310 | GabrielArquizaCruz@gmail.com | linkedin.com/in/gabriel-arquiza-cruz | github.com/gabrielzurc10 | gabriel-cruz.dev 
 PROFESSIONAL SUMMARY 
-Software Engineer with over 4 years of experience designing, developing, and deploying scalable full-stack applications. Skilled in Java, 
+Software Developer with over 4 years of experience designing, developing, and deploying scalable full-stack applications. Skilled in Java, 
 Spring Boot, Python, PHP, C#, .NET, JavaScript, TypeScript, React, Angular, and Node.js, with strong knowledge of REST APIs, 
 microservices, containerization, SQL and NoSQL databases, and cloud platforms including AWS, Azure, and GCP. Writes maintainable 
 code and builds scalable systems by applying SOLID principles, unit testing, and CI/CD, owning projects from requirements through 
@@ -15,7 +15,7 @@ RabbitMQ, Terraform, GitLab CI/CD, GitHub Actions, Git, Gradle, Maven, npm, Webp
 Practices: Agile, RESTful API Design, Microservices, Artificial Intelligence, Retrieval-Augmented Generation, Event-Driven Architecture, 
 CI/CD, Test-Driven Development, Distributed Systems, Cloud Platform Architecture, Cross-Functional Collaboration, System Design. 
 PROFESSIONAL EXPERIENCE 
-Software Engineer IV | Paycom​
+Software Developer | Paycom​
 Grapevine, TX | January 2023 – May 2026 
 •​ Led development of 5 automation initiatives using PHP, C#, .NET, and Couchbase caching across event-driven microservices, workflow 
 engines, and REST API integrations, partnering with HR teams to eliminate an estimated 1,000 hours of manual work per year. 
@@ -25,7 +25,7 @@ onboarding communications and reducing email coordination time by 80%.
 React/TypeScript dashboard, standardizing onboarding across 5 countries and reducing setup time by 60%. 
 •​ Implemented GitLab CI/CD pipelines to automate unit testing, lint checks, and deployment, cutting release time from 2 hours to 20 
 minutes. 
-Software Engineer | University of Houston, Enterprise Systems​
+Application Developer | University of Houston, Enterprise Systems​
    Houston, TX | October 2021 – December 2022 
 •​ Delivered full-stack web applications using Java and JavaScript, scaled to be used daily by more than 47,000 students and faculty, 
 reducing manual effort by 55%. 

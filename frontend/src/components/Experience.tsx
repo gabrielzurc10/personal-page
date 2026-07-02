@@ -1,6 +1,6 @@
 const EXPERIENCES = [
   {
-    title: "Software Engineer IV, III, II",
+    title: "Software Developer",
     company: "Paycom",
     location: "Grapevine, Texas",
     period: "January 2023 — May 2026",
@@ -12,7 +12,7 @@ const EXPERIENCES = [
     ],
   },
   {
-    title: "Software Engineer",
+    title: "Application Developer",
     company: "University of Houston, Enterprise Systems",
     location: "Houston, Texas",
     period: "October 2021 — December 2022",
