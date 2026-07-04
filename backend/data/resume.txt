@@ -1,57 +1,59 @@
 GABRIEL CRUZ 
-Dallas, TX | (832) 620-9310 | GabrielArquizaCruz@gmail.com | linkedin.com/in/gabriel-arquiza-cruz | github.com/gabrielzurc10 | gabriel-cruz.dev 
-PROFESSIONAL SUMMARY 
-Software Developer with over 4 years of experience designing, developing, and deploying scalable full-stack applications. Skilled in Java, 
-Spring Boot, Python, PHP, C#, .NET, JavaScript, TypeScript, React, Angular, and Node.js, with strong knowledge of REST APIs, 
-microservices, containerization, SQL and NoSQL databases, and cloud platforms including AWS, Azure, and GCP. Writes maintainable 
-code and builds scalable systems by applying SOLID principles, unit testing, and CI/CD, owning projects from requirements through 
-deployment. 
-TECHNICAL SKILLS 
-Languages: Java, JavaScript, TypeScript, Python, PHP, C#, C++, Bash, SQL, GraphQL, HTML, CSS. 
-Frameworks & Libraries: Spring Boot, .NET, React, Redux, Express, Angular, Node.js, Next.js, FastAPI, Tailwind, Pandas, LangChain. 
-Databases & Caching: MySQL, MSSQL, PostgreSQL, DynamoDB, MongoDB, Redis, Couchbase. 
-Cloud & DevOps: AWS, GCP, Microsoft Azure, Lambda, S3, CloudFront, CloudWatch, API Gateway, Cognito, Docker, Kubernetes, Kafka, 
-RabbitMQ, Terraform, GitLab CI/CD, GitHub Actions, Git, Gradle, Maven, npm, Webpack. 
-Practices: Agile, RESTful API Design, Microservices, Artificial Intelligence, Retrieval-Augmented Generation, Event-Driven Architecture, 
-CI/CD, Test-Driven Development, Distributed Systems, Cloud Platform Architecture, Cross-Functional Collaboration, System Design. 
-PROFESSIONAL EXPERIENCE 
-Software Developer | Paycom​
-Grapevine, TX | January 2023 – May 2026 
-•​ Led development of 5 automation initiatives using PHP, C#, .NET, and Couchbase caching across event-driven microservices, workflow 
-engines, and REST API integrations, partnering with HR teams to eliminate an estimated 1,000 hours of manual work per year. 
-•​ Designed and built a notification scheduling system using PHP, C#, .NET, TypeScript, React, Kafka, and RabbitMQ, automating 
-onboarding communications and reducing email coordination time by 80%. 
-•​ Developed a configurable form-templating system using containerized microservices with Docker, Kubernetes orchestration, and a 
-React/TypeScript dashboard, standardizing onboarding across 5 countries and reducing setup time by 60%. 
-•​ Implemented GitLab CI/CD pipelines to automate unit testing, lint checks, and deployment, cutting release time from 2 hours to 20 
-minutes. 
-Application Developer | University of Houston, Enterprise Systems​
-   Houston, TX | October 2021 – December 2022 
-•​ Delivered full-stack web applications using Java and JavaScript, scaled to be used daily by more than 47,000 students and faculty, 
-reducing manual effort by 55%. 
-•​ Enhanced the student information dashboard and course marketplace by refactoring Java REST APIs, reducing page load times by 70%. 
-•​ Optimized database schemas using PostgreSQL by rewriting joins, adding indexes, and introducing caching with Redis, reducing query 
-times by 50%. 
-Software Engineer Intern | T-Mobile​
-Frisco, TX | May 2022 – August 2022 
-•​ Accelerated customer support by releasing a customer location indicator component on T-Mobile's 5G coverage map using Spring Boot 
-and Angular, speeding coverage diagnosis and reducing average call-handle time by 30%. 
-•​ Published an internal Node.js library in npm that standardized proof-of-possession token authorization across T-Mobile services using 
-JavaScript and Postman, driving adoption across 5 engineering teams and saving an estimated 200 hours of boilerplate setup. 
-PROJECTS 
-rabbitrole – AI Resume Reviewer and Job Matcher​
-rabbitrole.com 
-•​ Built an AI resume reviewer and job matcher using Java, Spring Boot, Gradle, TypeScript, React, Next.js, LLMs, and RAG pipelines, 
-critiquing resumes and ranking live job postings. 
-•​ Secured user logins using Amazon Cognito and Google OAuth, including token refresh and session handling. 
-•​ Deployed a Spring Boot backend on AWS Lambda with DynamoDB using Terraform, achieving automated deployment with CI/CD and a 
-serverless architecture that scales on demand. 
-Personal Website with AI Assistant​
+Dallas, TX | (832) 620-9310 | GabrielArquizaCruz@gmail.com | linkedin.com/in/gabriel-arquiza-cruz | github.com/gabrielzurc10 | 
 gabriel-cruz.dev 
-•​ Released a personal website with an AI assistant using Python, FastAPI, TypeScript, React, Next.js, and LLMs to answer professional 
-background questions. 
-•​ Architected the frontend to be statically served from S3 and CloudFront utilizing CDN and caching, resulting in fast global page loads. 
+PROFESSIONAL SUMMARY 
+Software Developer with 4+ years of experience building full-stack, cloud-native applications across HR technology, telecommunications, 
+and higher education. Shipped features serving 36,000+ organizations and automated workflows saving thousands of hours annually, 
+owning projects from requirements through deployment. 
+SKILLS 
+Languages: Java, C#, Python, TypeScript, JavaScript, PHP, C/C++, SQL, HTML, CSS. 
+Frameworks & Libraries: Spring Boot, .NET, React, Angular, Redux, Express, Node.js, Next.js, FastAPI, Tailwind CSS, OpenAI API, LangChain. 
+Databases & Caching: MySQL, PostgreSQL, DynamoDB, Redis, Couchbase. 
+Cloud & DevOps: AWS, GCP, Azure, Docker, Kubernetes, Kafka, Terraform, GitLab CI/CD, GitHub Actions, Git, Gradle, Maven. 
+PROFESSIONAL EXPERIENCE 
+Software Developer IV, III, II​
+January 2023 – May 2026 
+Paycom | Cloud-based HCM and payroll software​
+Grapevine, TX 
+•​ Led development of 5 automation initiatives using event-driven microservices, workflow engines, and REST API integrations, partnering 
+with HR stakeholders to eliminate an estimated 1,000+ hours of manual work per year. 
+•​ Designed and built a notification scheduling dashboard utilizing Kafka-backed delivery pipeline with a React and TypeScript frontend, 
+handling 100,000+ emails monthly and reducing email coordination time by 80%. 
+•​ Developed a configurable form-templating system using containerized microservices with Docker and Kubernetes, standardizing 
+onboarding across 5 countries and reducing setup time by 60%. 
+•​ Implemented GitLab CI/CD pipelines to automate unit testing and deployment, cutting release time from 2 hours to 20 minutes. 
+•​ Optimized high-traffic data endpoints by rewriting SQL joins, adding indexes and Couchbase caching, reducing p95 read latency by 50%. 
+Application Developer​
+October 2021 – December 2022    
+University of Houston ​
+Houston, TX  
+•​ Delivered full-stack web applications used daily by 47,000+ students and faculty to register for courses, submit grades, and manage 
+records. 
+•​ Enhanced the student information dashboard and course marketplace with responsive mobile support and WCAG-compliant 
+screen-reader accessibility, and refactored REST APIs to cut page load times by 70%. 
+•​ Normalized database schemas to eliminate redundant data slowing high-volume endpoints, reducing query times by 50%. 
+Software Engineer Intern​
+May 2022 – August 2022  
+T-Mobile ​
+Frisco, TX 
+•​ Accelerated customer support by releasing a customer location indicator component on T-Mobile's 5G coverage map, speeding 
+coverage diagnosis and reducing average call-handle time by 30%. 
+•​ Published an internal Node.js library in npm that standardized proof-of-possession token authorization across T-Mobile services, driving 
+adoption across 5+ engineering teams and saving an estimated 200+ hours of boilerplate setup. 
+PERSONAL PROJECTS 
+rabbitrole – AI Resume Reviewer and Job Matcher ​
+rabbitrole.com 
+•​ Built an AI resume reviewer and job matcher that critiques resumes and ranks live job postings using LLMs and a RAG pipeline. 
+•​ Engineered the matching engine that embeds resumes and job descriptions to score relevance and rank recommendations. 
+•​ Secured user logins with Amazon Cognito and Google OAuth, including token refresh and session handling. 
+•​ Deployed a Spring Boot backend on AWS Lambda with DynamoDB, achieving a serverless architecture that scales on demand. 
+Personal Website with AI Assistant ​
+gabriel-cruz.dev 
+•​ Released a personal website with an AI assistant using Python, FastAPI, and LLMs to answer professional background questions. 
+•​ Architected a Next.js, React, and TypeScript frontend to be statically served from S3 and CloudFront, resulting in fast global page loads. 
 •​ Provisioned the AWS architecture as code with Terraform and CI/CD with GitHub Actions, automating builds and deployments. 
 EDUCATION 
-Bachelor of Science in Computer Science | University of Houston​
-Houston, TX | August 2020 – December 2022
+Bachelor of Science in Computer Science​
+August 2020 – December 2022  
+University of Houston​
+Houston, TX

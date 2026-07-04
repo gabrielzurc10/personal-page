@@ -1,25 +1,26 @@
 const EXPERIENCES = [
   {
-    title: "Software Developer",
+    title: "Software Developer IV, III, II",
     company: "Paycom",
     location: "Grapevine, Texas",
     period: "January 2023 — May 2026",
     bullets: [
-      "Led development of 5 automation initiatives across event-driven microservices, workflow engines, and REST API integrations, partnering with HR teams to eliminate an estimated 1,000 hours of manual work per year.",
-      "Designed and built a notification scheduling system to automate onboarding communications, reducing email coordination time by 80%.",
-      "Developed a configurable form-templating system that standardized onboarding across 5 countries, reducing setup time by 60%.",
-      "Implemented CI/CD pipelines to automate testing and deployment, cutting release time from 2 hours to 20 minutes.",
+      "Led development of 5 automation initiatives using event-driven microservices, workflow engines, and REST API integrations, partnering with HR stakeholders to eliminate an estimated 1,000+ hours of manual work per year.",
+      "Designed and built a notification scheduling dashboard utilizing Kafka-backed delivery pipeline with a React and TypeScript frontend, handling 100,000+ emails monthly and reducing email coordination time by 80%.",
+      "Developed a configurable form-templating system using containerized microservices with Docker and Kubernetes, standardizing onboarding across 5 countries and reducing setup time by 60%.",
+      "Implemented GitLab CI/CD pipelines to automate unit testing and deployment, cutting release time from 2 hours to 20 minutes.",
+      "Optimized high-traffic data endpoints by rewriting SQL joins, adding indexes and Couchbase caching, reducing p95 read latency by 50%.",
     ],
   },
   {
     title: "Application Developer",
-    company: "University of Houston, Enterprise Systems",
+    company: "University of Houston",
     location: "Houston, Texas",
     period: "October 2021 — December 2022",
     bullets: [
-      "Delivered full-stack web applications used daily by more than 47,000 students and faculty, automating manual processes by 55%.",
-      "Enhanced the student information dashboard and course marketplace by refactoring REST APIs, reducing page load times by 70%.",
-      "Optimized database schemas by rewriting joins, adding indexes, and introducing caching, reducing query times by 50%.",
+      "Delivered full-stack web applications used daily by 47,000+ students and faculty to register for courses, submit grades, and manage records.",
+      "Enhanced the student information dashboard and course marketplace with responsive mobile support and WCAG-compliant screen-reader accessibility, and refactored REST APIs to cut page load times by 70%.",
+      "Normalized database schemas to eliminate redundant data slowing high-volume endpoints, reducing query times by 50%.",
     ],
   },
   {
@@ -29,7 +30,7 @@ const EXPERIENCES = [
     period: "May 2022 — August 2022",
     bullets: [
       "Accelerated customer support by releasing a customer location indicator component on T-Mobile's 5G coverage map, speeding coverage diagnosis and reducing average call-handle time by 30%.",
-      "Published an internal Node.js library that standardized proof-of-possession token authorization across T-Mobile services, driving adoption across 5 engineering teams and saving an estimated 200 hours of boilerplate setup.",
+      "Published an internal Node.js library in npm that standardized proof-of-possession token authorization across T-Mobile services, driving adoption across 5+ engineering teams and saving an estimated 200+ hours of boilerplate setup.",
     ],
   },
 ];
