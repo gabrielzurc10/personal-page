@@ -10,6 +10,7 @@ from mangum import Mangum
 from openai import OpenAI
 from pydantic import BaseModel
 from gabriel_context import GABRIEL_CONTEXT
+from greppa_context import GREPPA_CONTEXT
 from resume_context import RESUME_CONTEXT
 from rabbitrole_context import RABBITROLE_CONTEXT
 from winston_context import WINSTON_CONTEXT
@@ -66,6 +67,9 @@ Here is Gabriel's resume for reference:
 
 Here is one of Gabriel's projects, rabbitrole, for reference:
 {RABBITROLE_CONTEXT}
+
+Here is another of Gabriel's projects, Greppa, for reference:
+{GREPPA_CONTEXT}
 
 For Contact details, you may use Gabriel's email, linkedin, and github.
 """
