@@ -37,7 +37,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-screen bg-white text-gray-800 dark:bg-[#0d0d0d] dark:text-gray-100">
+      <body className="min-h-screen bg-base-200 text-base-content dark:bg-base-100">
         <ThemeProvider>
           <ScrollManager />
           {children}

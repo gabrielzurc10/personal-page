@@ -3,13 +3,13 @@
 Deploys the portfolio to AWS:
 
 - **Frontend** — Next.js static export in a private S3 bucket, served by CloudFront.
-- **Backend** — FastAPI on Lambda, fronted by an API Gateway HTTP API.
+- **Backend** — FastAPI on Lambda behind a public Lambda Function URL with response streaming. The [AWS Lambda Web Adapter](https://github.com/awslabs/aws-lambda-web-adapter) layer runs uvicorn inside the Lambda so the chat reply streams token-by-token.
 - **Memory** — chat sessions in a private S3 bucket.
 - Environment: **prod** · Region: **us-east-2**.
 
 Every resource is tagged `Project=portfolio`, `Environment=prod`, `ManagedBy=terraform` (via provider `default_tags`). A tag-based **AWS Resource Group** (`portfolio-prod-resources`) groups them for a one-click view in the console under *Resource Groups & Tag Editor*. Regional Resource Groups don't surface global/edge resources (CloudFront, ACM us-east-1, IAM, Route 53) — those still carry the `Project` tag, so use the **Tag Editor** (search all regions by `Project=portfolio`) to see everything.
 
-> **Note:** the chat replies arrive in one buffered response rather than streaming token-by-token — API Gateway does not support Lambda response streaming. The UI still works; it just doesn't "type out" live.
+> **Note:** streaming only works through the Function URL (`invoke_mode = "RESPONSE_STREAM"`). API Gateway HTTP APIs buffer Lambda responses, which is why the stack does not use one. `run.sh` is the Lambda handler; `AWS_LWA_READINESS_CHECK_PATH=/health` tells the adapter when uvicorn is up.
 
 ## One-time setup
 
@@ -18,8 +18,7 @@ Create an IAM user and attach these managed policies, then create an access key 
 
 - `AmazonS3FullAccess`
 - `CloudFrontFullAccess`
-- `AWSLambda_FullAccess`
-- `AmazonAPIGatewayAdministrator`
+- `AWSLambda_FullAccess` (covers the Function URL)
 - `IAMFullAccess` (required so Terraform can create the Lambda role)
 - `AmazonDynamoDBFullAccess`
 - `CloudWatchLogsFullAccess`
@@ -65,7 +64,13 @@ aws cloudfront create-invalidation \
   --distribution-id "$(cd ../terraform && terraform output -raw cloudfront_distribution_id)" --paths "/*"
 ```
 
-Outputs: `cloudfront_url` (the site), `api_endpoint`, `frontend_bucket`, `memory_bucket`, `resource_group`.
+Outputs: `cloudfront_url` (the site), `api_endpoint` (the Function URL, no trailing slash), `frontend_bucket`, `memory_bucket`, `resource_group`.
+
+To confirm streaming after a deploy, watch the chunks arrive one at a time:
+```bash
+curl -N -X POST "$(terraform output -raw api_endpoint)/api/chat" \
+  -H 'Content-Type: application/json' -d '{"session_id": null, "message": "Summarize his work experience"}'
+```
 
 ## Tear down
 ```bash

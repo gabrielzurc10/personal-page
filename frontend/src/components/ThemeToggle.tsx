@@ -36,11 +36,11 @@ export default function ThemeToggle() {
   }
 
   return (
-    <div className="relative flex items-center gap-1 rounded-full bg-neutral-100 p-1 dark:bg-white/10">
+    <div className="relative flex items-center gap-1 rounded-full bg-base-300 p-1">
       {/* Sliding highlight behind the selected option */}
       <span
         aria-hidden
-        className="pointer-events-none absolute top-1 z-0 rounded-full bg-white shadow-sm transition-all duration-300 ease-out dark:bg-white/20"
+        className="pointer-events-none absolute top-1 z-0 rounded-full bg-base-100 shadow-sm transition-all duration-300 ease-out dark:bg-base-content/20"
         style={{
           left: pill.left,
           width: pill.width,
@@ -57,8 +57,8 @@ export default function ThemeToggle() {
           onClick={() => setTheme(option.value)}
           className={`relative z-10 rounded-full p-1.5 transition-colors ${
             theme === option.value
-              ? "text-neutral-900 dark:text-white"
-              : "text-neutral-400 hover:text-neutral-600 dark:text-neutral-500 dark:hover:text-neutral-300"
+              ? "text-base-content"
+              : "text-base-content/40 hover:text-base-content/70"
           }`}
           title={option.label}
           aria-label={`Switch to ${option.label} mode`}

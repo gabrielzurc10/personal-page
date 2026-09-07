@@ -29,7 +29,13 @@ variable "lambda_memory_mb" {
 }
 
 variable "lambda_timeout_s" {
-  description = "Lambda timeout in seconds."
+  description = "Lambda timeout in seconds. Streaming replies are billed for the full duration, so keep this modest."
   type        = number
-  default     = 30
+  default     = 60
+}
+
+variable "lwa_layer_version" {
+  description = "Version of the AWS Lambda Web Adapter layer (LambdaAdapterLayerX86). See https://github.com/awslabs/aws-lambda-web-adapter#lambda-functions-packaged-as-zip-package-for-aws-managed-runtimes"
+  type        = number
+  default     = 28
 }

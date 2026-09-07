@@ -3,7 +3,8 @@
 
 Installs dependencies as Linux (manylinux) wheels so compiled packages like
 pydantic-core work on the Lambda runtime even when this script runs on macOS,
-then bundles the backend source + data files into terraform/build/lambda.zip.
+then bundles the backend source, run.sh (Lambda Web Adapter entrypoint) and data
+files into terraform/build/lambda.zip.
 
 Usage:
     python terraform/scripts/build_lambda.py
@@ -57,6 +58,11 @@ def copy_source() -> None:
     # Application modules.
     for py_file in BACKEND_DIR.glob("*.py"):
         shutil.copy2(py_file, PACKAGE_DIR / py_file.name)
+    # Lambda Web Adapter entrypoint (the function "handler"). Must be executable;
+    # zipfile preserves the mode bits, so set them here regardless of the checkout.
+    run_sh = PACKAGE_DIR / "run.sh"
+    shutil.copy2(BACKEND_DIR / "run.sh", run_sh)
+    run_sh.chmod(0o755)
     # Bundled data (resume PDF + context text files).
     src_data = BACKEND_DIR / "data"
     if src_data.is_dir():

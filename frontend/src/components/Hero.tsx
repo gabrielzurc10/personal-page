@@ -1,53 +1,96 @@
 import Image from "next/image";
+import CountUp from "@/components/CountUp";
+import WinstonPrompts from "@/components/WinstonPrompts";
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
 
+const STATS = [
+  { value: 36000, suffix: "+", label: "organizations using features I shipped" },
+  { value: 47000, suffix: "+", label: "students and faculty served daily" },
+  { value: 100000, suffix: "+", label: "emails a month through my pipeline" },
+  { value: 1000, suffix: "+", label: "hours of manual work eliminated yearly" },
+];
+
 export default function Hero() {
   return (
-    <section className="flex min-h-dvh items-center justify-center px-6 py-24 sm:py-20">
-      <div className="card-hover mx-auto flex max-w-6xl flex-col items-center gap-8 rounded-2xl bg-white p-8 dark:bg-white/[0.05] sm:gap-12 sm:p-12 md:flex-row md:gap-16">
-        <div className="shrink-0">
-          <Image
-            src="/profileShot.jpg"
-            alt="Gabriel Cruz"
-            width={280}
-            height={280}
-            priority
-            className="h-40 w-40 rounded-full object-cover sm:h-52 sm:w-52 md:h-64 md:w-64 lg:h-[280px] lg:w-[280px]"
-          />
-        </div>
-        <div className="text-center md:text-left">
-          <p className="mb-2 text-sm font-medium uppercase tracking-widest text-primary dark:text-white">
-            Software Developer
-          </p>
-          <h1 className="mb-4 text-4xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-5xl lg:text-6xl">
-            Gabriel Cruz
-          </h1>
-          <p className="mb-8 max-w-xl text-lg leading-relaxed text-neutral-500 dark:text-neutral-400">
-            Software Developer with over 4 years of experience designing, developing, 
-            and deploying scalable full-stack applications. Shipped enterprise-scale 
-            software across HR/payroll, telecommunications, and higher education 
-            organizations, owning projects from requirements through deployment, and 
-            driving operational efficiency through automation that saves 
-            organizations thousands of hours annually.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 md:justify-start">
-            <a
-              href="#contact"
-              className="inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-neutral-700 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
-            >
-              <span>Contact Me</span>
-            </a>
-            <a
-              href={`${API_BASE}/api/resume`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center rounded-full bg-neutral-100 px-6 py-3 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-200 dark:bg-white/10 dark:text-neutral-300 dark:hover:bg-white/20"
-            >
-              <span>View Resume</span>
-            </a>
+    <section className="relative overflow-hidden px-6 pb-16 pt-24 sm:pb-20 sm:pt-32">
+      {/* Soft glow so the hero doesn't sit on a flat wall of color. */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10"
+        style={{
+          background:
+            "radial-gradient(60% 50% at 70% 35%, color-mix(in oklab, var(--color-info) 14%, transparent) 0%, transparent 70%)",
+        }}
+      />
+
+      <div className="mx-auto w-full max-w-6xl">
+        <div className="grid items-center gap-8 md:grid-cols-[1.35fr_1fr] md:gap-16">
+          {/* Copy */}
+          <div className="order-2 text-center md:order-1 md:text-left">
+            <p className="mb-3 text-xs font-medium uppercase tracking-wider text-base-content/60 sm:text-sm sm:tracking-widest">
+              Software Developer
+            </p>
+            <h1 className="mb-5 text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+              Gabriel Cruz
+            </h1>
+            <p className="mx-auto mb-8 max-w-xl text-lg leading-relaxed text-base-content/70 md:mx-0">
+              Four-plus years shipping cloud-native applications in HR tech,
+              telecom, and higher education, owning every project from
+              requirements through deployment.
+            </p>
+
+            <div className="mb-10 flex flex-wrap justify-center gap-3 md:justify-start">
+              <a href="#projects" className="btn btn-primary rounded-full px-6">
+                See my work
+              </a>
+              <a
+                href={`${API_BASE}/api/resume`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-outline rounded-full px-6"
+              >
+                View Resume
+              </a>
+            </div>
+
+            <WinstonPrompts className="mx-auto max-w-xl md:mx-0" />
+          </div>
+
+          {/* Portrait */}
+          <div className="order-1 flex justify-center md:order-2 md:justify-end">
+            <div className="relative">
+              <div
+                aria-hidden
+                className="absolute -inset-3 rounded-full bg-gradient-to-br from-info/40 via-transparent to-primary/30 blur-2xl"
+              />
+              <div className="avatar relative">
+                <div className="w-32 rounded-full ring-2 ring-base-300 ring-offset-4 ring-offset-base-100 sm:w-48 md:w-64 lg:w-[300px]">
+                  <Image
+                    src="/profileShot.jpg"
+                    alt="Gabriel Cruz"
+                    width={300}
+                    height={300}
+                    priority
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+
+        {/* Proof strip */}
+        <dl className="mt-14 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-base-300 pt-10 sm:mt-20 lg:grid-cols-4">
+          {STATS.map((stat) => (
+            <div key={stat.label} className="flex flex-col text-center md:text-left">
+              <dt className="order-2 text-sm leading-snug text-base-content/60">{stat.label}</dt>
+              <dd className="order-1 mb-1 text-3xl font-bold tracking-tight sm:text-4xl">
+                <CountUp value={stat.value} suffix={stat.suffix} />
+              </dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );

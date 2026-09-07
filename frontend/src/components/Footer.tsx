@@ -15,7 +15,7 @@ const LEGAL_LINKS = [
 ];
 
 const SOCIAL = [
-  { href: "mailto:GabrielArquizaCruz@gmail.com", label: "Email", icon: "/email.svg" },
+  { href: "mailto:gabrielarquizacruz@gmail.com", label: "Email", icon: "/email.svg" },
   { href: "https://linkedin.com/in/gabriel-arquiza-cruz", label: "LinkedIn", icon: "/linkedin.svg" },
   { href: "https://github.com/gabrielzurc10", label: "GitHub", icon: "/github.svg" },
 ];
@@ -24,81 +24,56 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-white dark:bg-[#0d0d0d]">
+    <footer className="bg-base-200 dark:bg-base-100">
       <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+        <div className="footer md:footer-horizontal md:justify-between">
           {/* Brand */}
-          <div className="max-w-sm">
+          <aside className="max-w-sm">
             <Link href="/" className="inline-flex items-center gap-2.5" aria-label="Home">
               <Image src="/light-icon.png" alt="Gabriel Cruz" width={36} height={36} className="dark:hidden" />
               <Image src="/dark-icon.png" alt="Gabriel Cruz" width={36} height={36} className="hidden dark:block" />
-              <span className="text-lg font-bold text-neutral-900 dark:text-white">Gabriel Cruz</span>
+              <span className="text-lg font-bold text-base-content">Gabriel Cruz</span>
             </Link>
-            <p className="mt-4 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400"> 
-              Software Developer with over 4 years of experience 
-              designing, developing, and deploying scalable 
-              full-stack applications. 
+            <p className="text-sm leading-relaxed text-base-content/60">
+              Software Developer with over 4 years of experience
+              designing, developing, and deploying scalable
+              full-stack applications.
             </p>
-          </div>
+          </aside>
 
           {/* Link columns */}
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
-            <div>
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-neutral-400 dark:text-neutral-500">
-                Explore
-              </h3>
-              <ul className="mt-4 space-y-3">
-                {EXPLORE_LINKS.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <nav>
+            <h6 className="footer-title">Explore</h6>
+            {EXPLORE_LINKS.map((link) => (
+              <Link key={link.href} href={link.href} className="link link-hover text-sm text-base-content/70">
+                {link.label}
+              </Link>
+            ))}
+          </nav>
 
-            <div>
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-neutral-400 dark:text-neutral-500">
-                Connect
-              </h3>
-              <ul className="mt-4 space-y-3">
-                {SOCIAL.map((item) => (
-                  <li key={item.href}>
-                    <a
-                      href={item.href}
-                      target={item.href.startsWith("http") ? "_blank" : undefined}
-                      rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                      className="text-sm text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
-                    >
-                      {item.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <nav>
+            <h6 className="footer-title">Connect</h6>
+            {SOCIAL.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                target={item.href.startsWith("http") ? "_blank" : undefined}
+                rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="link link-hover text-sm text-base-content/70"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
 
-            <div>
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-neutral-400 dark:text-neutral-500">
-                Legal
-              </h3>
-              <ul className="mt-4 space-y-3">
-                {LEGAL_LINKS.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+          <nav>
+            <h6 className="footer-title">Legal</h6>
+            {LEGAL_LINKS.map((link) => (
+              <Link key={link.href} href={link.href} className="link link-hover text-sm text-base-content/70">
+                {link.label}
+              </Link>
+            ))}
+          </nav>
         </div>
 
         {/* Bottom bar */}
@@ -117,7 +92,7 @@ export default function Footer() {
               </a>
             ))}
           </div>
-          <p className="text-sm text-neutral-400 dark:text-neutral-500">
+          <p className="text-sm text-base-content/50">
             &copy; {year} Gabriel Cruz. All rights reserved.
           </p>
         </div>

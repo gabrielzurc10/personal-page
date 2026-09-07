@@ -14,8 +14,8 @@ output "cloudfront_distribution_id" {
 }
 
 output "api_endpoint" {
-  description = "Base URL of the backend API. Set NEXT_PUBLIC_API_URL to this when building the frontend."
-  value       = aws_apigatewayv2_api.backend.api_endpoint
+  description = "Base URL of the backend API (Lambda Function URL, no trailing slash). Set NEXT_PUBLIC_API_URL to this when building the frontend."
+  value       = trimsuffix(aws_lambda_function_url.backend.function_url, "/")
 }
 
 output "frontend_bucket" {

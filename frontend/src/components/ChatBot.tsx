@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
+import { WINSTON_ASK_EVENT } from "@/lib/winston";
 
 interface Message {
   role: "user" | "assistant";
@@ -58,8 +59,8 @@ export default function ChatBot() {
     if (open && !loading) inputRef.current?.focus();
   }, [open, loading]);
 
-  const sendMessage = async () => {
-    const trimmed = input.trim();
+  const sendMessage = async (text: string = input) => {
+    const trimmed = text.trim();
     if (!trimmed || loading) return;
 
     setInput("");
@@ -155,6 +156,23 @@ export default function ChatBot() {
     }
   };
 
+  const sendMessageRef = useRef(sendMessage);
+  useEffect(() => {
+    sendMessageRef.current = sendMessage;
+  });
+
+  // Open the chat and ask a question dispatched from elsewhere on the page
+  // (e.g. the "Ask Winston" prompt chips in the hero).
+  useEffect(() => {
+    const onAsk = (e: Event) => {
+      const question = (e as CustomEvent<string>).detail;
+      setOpen(true);
+      sendMessageRef.current(question);
+    };
+    window.addEventListener(WINSTON_ASK_EVENT, onAsk);
+    return () => window.removeEventListener(WINSTON_ASK_EVENT, onAsk);
+  }, []);
+
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
@@ -202,17 +220,15 @@ export default function ChatBot() {
 
       {/* Chat Modal */}
       {open && (
-        <div className={`fixed z-50 flex flex-col overflow-hidden rounded-[2rem] bg-white shadow-2xl dark:bg-[#171717] ${
+        <div className={`card fixed z-50 flex flex-col overflow-hidden rounded-[2rem] bg-base-100 shadow-2xl dark:bg-base-200 ${
           expanded
             ? "inset-0 m-auto h-[80vh] max-h-[700px] w-[90vw] max-w-2xl"
             : "bottom-28 right-4 h-[500px] max-h-[calc(100vh-10rem)] w-[calc(100vw-2rem)] sm:bottom-40 sm:right-6 sm:w-[380px] md:w-[420px]"
         }`}>
           {/* Header */}
-          <div className="flex items-center justify-between bg-primary px-4 py-3 dark:bg-neutral-600">
+          <div className="flex items-center justify-between bg-neutral px-4 py-3 text-neutral-content">
             <div className="flex items-center gap-2">
-              <span className="font-semibold text-white dark:text-white">
-                Chat with Winston
-              </span>
+              <span className="font-semibold">Chat with Winston</span>
             </div>
             <div className="flex items-center gap-3">
               <button
@@ -222,7 +238,7 @@ export default function ChatBot() {
               >
                 <span
                   aria-hidden
-                  className="block h-5 w-5 bg-white/60 transition-colors group-hover:bg-white"
+                  className="block h-5 w-5 bg-neutral-content/60 transition-colors group-hover:bg-neutral-content"
                   style={maskStyle(expanded ? "/collapse.svg" : "/expand.svg")}
                 />
               </button>
@@ -233,7 +249,7 @@ export default function ChatBot() {
               >
                 <span
                   aria-hidden
-                  className="block h-5 w-5 bg-white/60 transition-colors group-hover:bg-white"
+                  className="block h-5 w-5 bg-neutral-content/60 transition-colors group-hover:bg-neutral-content"
                   style={maskStyle("/close.svg")}
                 />
               </button>
@@ -247,10 +263,10 @@ export default function ChatBot() {
                 <div className="mb-3">
                   <Image src="/winstonProfile.png" alt="Winston" width={48} height={48} />
                 </div>
-                <p className="text-sm font-medium text-neutral-900 dark:text-white">
+                <p className="text-sm font-medium text-base-content">
                   Hi! My name is Winston, Gabriel&apos;s digital assistant. Ask me anything about Gabriel.
                 </p>
-                <p className="mt-1 text-xs text-neutral-400 dark:text-neutral-500">
+                <p className="mt-1 text-xs text-base-content/50">
                   Skills, experience, education, and more.
                 </p>
               </div>
@@ -263,16 +279,20 @@ export default function ChatBot() {
               return (
                 <div
                   key={i}
-                  className={`mb-3 flex items-end gap-2 ${msg.role === "user" ? "justify-end" : "justify-start"}`}
+                  className={`chat ${msg.role === "user" ? "chat-end" : "chat-start"}`}
                 >
                   {msg.role === "assistant" && (
-                    <Image src="/winstonProfile.png" alt="Winston" width={28} height={28} className="shrink-0" />
+                    <div className="chat-image avatar">
+                      <div className="w-7">
+                        <Image src="/winstonProfile.png" alt="Winston" width={28} height={28} />
+                      </div>
+                    </div>
                   )}
                   <div
-                    className={`max-w-[75%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
+                    className={`chat-bubble text-sm leading-relaxed ${
                       msg.role === "user"
-                        ? "bg-blue-500 text-white dark:bg-blue-600 dark:text-white"
-                        : "bg-neutral-100 text-neutral-800 dark:bg-white/10 dark:text-neutral-200"
+                        ? "chat-bubble-info"
+                        : "bg-base-200 text-base-content dark:bg-base-300"
                     }`}
                   >
                     {msg.role === "assistant" ? (
@@ -288,12 +308,14 @@ export default function ChatBot() {
             })}
 
             {loading && messages[messages.length - 1]?.content === "" && (
-              <div className="mb-3 flex items-end justify-start gap-2">
-                <Image src="/winstonProfile.png" alt="Winston" width={28} height={28} className="shrink-0" />
-                <div className="flex gap-1.5 rounded-2xl bg-neutral-100 px-4 py-3 dark:bg-white/10">
-                  <span className="h-2 w-2 animate-bounce rounded-full bg-neutral-400 [animation-delay:0ms]" />
-                  <span className="h-2 w-2 animate-bounce rounded-full bg-neutral-400 [animation-delay:150ms]" />
-                  <span className="h-2 w-2 animate-bounce rounded-full bg-neutral-400 [animation-delay:300ms]" />
+              <div className="chat chat-start">
+                <div className="chat-image avatar">
+                  <div className="w-7">
+                    <Image src="/winstonProfile.png" alt="Winston" width={28} height={28} />
+                  </div>
+                </div>
+                <div className="chat-bubble bg-base-200 dark:bg-base-300">
+                  <span className="loading loading-dots loading-sm text-base-content/50" />
                 </div>
               </div>
             )}
@@ -306,7 +328,7 @@ export default function ChatBot() {
             <div className="pointer-events-none flex justify-center">
               <button
                 onClick={scrollToBottom}
-                className="pointer-events-auto -mb-4 -mt-12 z-10 flex h-8 w-8 items-center justify-center rounded-full border border-neutral-200 bg-white shadow-md transition-colors hover:bg-neutral-50 dark:border-white/10 dark:bg-neutral-700 dark:hover:bg-neutral-600"
+                className="btn btn-circle btn-sm pointer-events-auto -mb-4 -mt-12 z-10 border-base-300 bg-base-100 shadow-md hover:bg-base-200"
                 aria-label="Scroll to bottom"
               >
                 <Image src="/chevron-down.svg" alt="scroll to bottom" width={16} height={16} className="opacity-50 dark:invert dark:opacity-70" />
@@ -324,13 +346,13 @@ export default function ChatBot() {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Ask about Gabriel..."
-                className="flex-1 rounded-full bg-neutral-100 px-4 py-2.5 text-base text-neutral-900 outline-none transition-colors placeholder:text-neutral-400 dark:bg-white/10 dark:text-white dark:placeholder:text-neutral-500 sm:text-sm"
+                className="input flex-1 rounded-full border-none bg-base-200 text-base focus:outline-none dark:bg-base-300 sm:text-sm"
                 disabled={loading}
               />
               <button
-                onClick={sendMessage}
+                onClick={() => sendMessage()}
                 disabled={loading || !input.trim()}
-                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-500 text-white transition-opacity hover:opacity-80 disabled:opacity-50 dark:bg-blue-600"
+                className="btn btn-info btn-circle shrink-0"
                 aria-label="Send message"
               >
                 <Image src="/send.svg" alt="send message" width={16} height={16} className="invert" />

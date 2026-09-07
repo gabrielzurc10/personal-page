@@ -33,6 +33,7 @@ export default function ScrollReveal({
   return (
     <div
       ref={ref}
+      data-visible={visible}
       className={`transition-all duration-700 ${
         visible
           ? "translate-y-0 opacity-100"

@@ -36,7 +36,7 @@ export default function RabbitrolePage() {
         <FadeIn>
           <Link
             href="/#projects"
-            className="text-sm text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
+            className="text-sm text-base-content/60 transition-colors hover:text-base-content"
           >
             &larr; Back to projects
           </Link>
@@ -50,11 +50,11 @@ export default function RabbitrolePage() {
               height={721}
               className="h-10 w-auto sm:h-12"
             />
-            <h1 className="text-4xl font-bold tracking-tight text-neutral-900 dark:text-white">
+            <h1 className="text-4xl font-bold tracking-tight">
               rabbitrole
             </h1>
           </div>
-          <p className="mt-3 text-lg text-neutral-500 dark:text-neutral-400">
+          <p className="mt-3 text-lg text-base-content/60">
             An AI resume reviewer and job matcher
           </p>
 
@@ -62,7 +62,7 @@ export default function RabbitrolePage() {
             {TECH.map((tech) => (
               <span
                 key={tech}
-                className="rounded-full bg-neutral-100 px-3 py-1 text-sm text-neutral-600 dark:bg-white/10 dark:text-neutral-300"
+                className="badge badge-ghost badge-lg bg-base-300 text-sm dark:bg-base-200"
               >
                 {tech}
               </span>
@@ -74,7 +74,7 @@ export default function RabbitrolePage() {
               href="https://rabbitrole.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-neutral-700 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
+              className="btn btn-primary rounded-full px-6"
             >
               <span>Visit rabbitrole.com</span>
             </a>
@@ -91,14 +91,14 @@ export default function RabbitrolePage() {
             href="https://rabbitrole.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-neutral-700 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
+            className="btn btn-primary rounded-full px-6"
           >
             <span>Visit rabbitrole.com</span>
           </a>
 
           <Link
             href="/#projects"
-            className="text-sm text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
+            className="text-sm text-base-content/60 transition-colors hover:text-base-content"
           >
             &larr; Back to projects
           </Link>

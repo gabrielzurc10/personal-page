@@ -6,7 +6,6 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, StreamingResponse
-from mangum import Mangum
 from openai import OpenAI
 from pydantic import BaseModel
 from gabriel_context import GABRIEL_CONTEXT
@@ -38,6 +37,12 @@ if not MEMORY_BUCKET:
     MEMORY_DIR.mkdir(exist_ok=True)
 
 RESUME_PDF = Path(__file__).resolve().parent / "data" / "Gabriel_Cruz_Resume.pdf"
+
+
+@app.get("/health")
+async def health():
+    """Readiness probe. In Lambda the Web Adapter polls this before routing traffic."""
+    return {"status": "ok"}
 
 
 @app.get("/api/resume")
@@ -167,7 +172,3 @@ async def chat(request: ChatRequest):
             "Connection": "keep-alive",
         },
     )
-
-
-# Lambda entrypoint (unused when running locally via uvicorn).
-handler = Mangum(app)

@@ -1,3 +1,12 @@
 In his free time, Gabriel enjoys going to the gym, walking outdoors, and hiking. He loves spending time with his dogs, Winston and Moab. He also likes tinkering with new development technologies and applying what he learns to his work and personal projects.
 
 His nickname is Gabe.
+
+Where Gabriel gained experience with each technology:
+- Python: college coursework and personal projects (including this website's FastAPI backend and other personal projects).
+- C++: college coursework.
+- Paycom (Software Developer IV, III, II): PHP, C#, .NET, Java, Spring Boot, JavaScript, MySQL, and Couchbase.
+- University of Houston (Application Developer): C#, .NET, Java, Spring Boot, JavaScript, Angular, PostgreSQL, and Redis.
+- T-Mobile (Software Engineer Intern): C#, .NET, Angular, Java, Spring Boot, and JavaScript.
+
+Gabriel is currently based in Dallas, TX and is open to new opportunities. He is open to relocating anywhere in the United States for the right role.
