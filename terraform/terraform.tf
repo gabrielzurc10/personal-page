@@ -4,7 +4,8 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 5.0"
+      # >= 6.x for aws_lambda_permission.invoked_via_function_url (see function_url.tf).
+      version = "~> 6.0"
     }
   }
 
